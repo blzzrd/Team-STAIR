@@ -37,25 +37,65 @@
 
 <script src="SpaceCraftMovement.js"></script>
 
-
-<script src="game_config.js"
+<!--  Ramo's Code -->
+<script src="game_config.js"></script>
+<style>
+	#game {
+	display: none;
+	}
+	#configScreen {
+		display: none;
+	}
+</style>
+<!--  Ramo's Code -->
 
 </head>
 
-<!--  start of Game config -->
-<body id = "configOptions"> 
-<form>
-<input id="customTF" type="text"> 
 
-
+<body >
+<!--  Prompt for custom settings -->
+<div id="config">
+<form oninput="gameConfigOption()">
+<h2> Welcome to Space Hunt</h2>
+<p>Would you like to personalize your gaming experience?
+	<select id="gameConfigTF">
+				<option value=""></option>
+				<option value="true">True</option>
+				<option value="false">False</option>
+	</select>
 </form>
-</body>
-<body id="game">
+</div>
+<!-- End Prompt  -->
+
+<!--  Custom Settings Option -->
+<div id="configScreen">
+<h3>Custom Setting Options</h3>
+<p id="validate"></p>
+<form id="customSettings" oninput="getCustomSettings()">
+	X Location:<input id="xLoc" type=text size=4 value="0"><br>
+	Y Location:<input id="yLoc" type=text size=4 value="0"><br>
+	Energy:<input id="energy" type=text size=4 value="100">%<br>
+	Supplies:<input id="supplies" type=text size=4 value="0"><br>
+	<!--Credits:<input id="credits" type=text size=4 value="0"><br> -->
+	Randomize Wormhole Behavior:<select id="randomizeWormhole" value ="0">
+				<option value="0">False</option>
+				<option value="1">True</option>
+	</select><br>
+	Play Mode:<select id="playerDies" value ="0">
+				<option value="0">Regular Play</option>
+				<option value="1">Never Dies</option>
+	</select><br>
+	Map Size:<input id="mapSize" type=text size=4 value="25">
+	<input type=submit onsubmit="loadGame()">
+</div>
+<!-- End of custom settings option  -->
+
+
 
 <!-- end game config -->
 
 
-
+<div id="game">
 <h1>SpaceHunt</h1>
 <form name=UI>
 STATUS
@@ -76,7 +116,7 @@ MAKE A MOVE
 <input type=button value="270" onclick=moveSpacecraft(270,distance)>
 
 </form>
-
+</div>
 </body>
 
 </html>
