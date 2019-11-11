@@ -37,6 +37,8 @@
 
 <script src="SpaceCraftMovement.js"></script>
 
+
+
 <!--  Ramo's Code -->
 <script src="game_config.js"></script>
 <style>
@@ -47,7 +49,7 @@
 		display: none;
 	}
 </style>
-<!--  Ramo's Code -->
+
 
 </head>
 
@@ -85,8 +87,11 @@
 				<option value="0">Regular Play</option>
 				<option value="1">Never Dies</option>
 	</select><br>
-	Map Size:<input id="mapSize" type=text size=4 value="25">
-	<input type=submit onsubmit="loadGame()">
+	Map Size:<input id="mapSize" type=text size=4 value="25"><br>
+	</form>
+	<button type=button onclick="loadCustomGame()"> Load Game </button>   
+
+	
 </div>
 <!-- End of custom settings option  -->
 
@@ -100,11 +105,11 @@
 <form name=UI>
 STATUS
 <p>Current Location: 
-X <input type=text name=xValue size=4>
-Y <input type=text name=yValue size=4>
+X <input type=text  id="xVal" size=4 value="10">
+Y <input type=text name=yValue  id="yVal" size=4 value="10">
 <p>
-<p>Energy <input type=text name=energy size=4>
-<p>Supplies <input type=text name=supplies size=4>%
+<p>Energy <input type=text name=energy size=4 value="100">
+<p>Supplies <input type=text name=supplies size=4 value="100">%
 <p>
 <hr>
 MAKE A MOVE
