@@ -27,8 +27,8 @@ function gameConfigOption() {
 return;
 }
 function getCustomSettings() {
-	
-	locX = document.getElementById("xLoc").value;
+
+	xLoc = document.getElementById("xLoc").value;
 	yLoc = document.getElementById("yLoc").value;
 	energy= document.getElementById("energy").value;
 	supplies = document.getElementById("supplies").value;
@@ -37,15 +37,17 @@ function getCustomSettings() {
 	playerDies = document.getElementById("playerDies").value;
 	mapSize = document.getElementById("mapSize").value;
 	
-	//check for isNaN(credits later
+		document.getElementById("xVal").value = xLoc;
+		document.getElementById("yVal").value = yLoc;
+		document.getElementById("energyVal").value = energy;
+		document.getElementById("suppliesVal").value = supplies;
+		
+	/*//check for isNaN(credits later
 	if( (isNaN(xLoc)) || (isNaN(yLoc)) || (isNaN(energy)) || (isNaN(supplies)) || (mapSize(xLoc)) ) {
 		document.getElementById("validate").innerHTML = "Enter numerical values only!";
-		return;
+		
 	}
-	//else{
-		//document.getElementById("validate").innerHTML = "";
-		//return;
-	//}
+		*/
 
 
 }
@@ -55,6 +57,10 @@ function loadDefaultGame() {
 	document.getElementById("game").style.display = "block";
 	 document.getElementById("configScreen").style.display = "none";
 	document.getElementById("config").style.display = "none";
+	document.getElementById("xVal").value = "10";
+	document.getElementById("yVal").value = "10";
+	document.getElementById("energyVal").value = "100";
+	document.getElementById("suppliesVal").value = "100";
 	
 	
 }
@@ -63,4 +69,6 @@ function loadCustomGame() {
 	document.getElementById("game").style.display = "block";
 	document.getElementById("configScreen").style.display = "none";
 	document.getElementById("config").style.display = "none";
+	return false;
+
 }
