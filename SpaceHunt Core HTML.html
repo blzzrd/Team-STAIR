@@ -1,16 +1,16 @@
 <script>
-	var map = new Array[128];
-	for(var i = 0; i < 128; ++i)
+var map = new Array[128];
+for(var i = 0; i < 128; ++i)
+{
+	map[i] = new Array[128];
+}
+for(var i = 0; i < 128; ++i)
+{
+	for(var j = 0; j < 128; ++j)
 	{
-		map[i] = new Array[128];
+		map[i][j] = null;
 	}
-	for(var i = 0; i < 128; ++i)
-	{
-		for(var j = 0; j < 128; ++j)
-		{
-			map[i][j] = null;
-		}
-	}
+}
 </script>
 
 <html>
@@ -49,6 +49,7 @@
 -->
 
 
+<script src="celestial_artifacts.js"></script>
 
 <script src="SpaceCraftMovement.js"></script>
 
@@ -84,6 +85,10 @@
 </div>
 <!-- End Prompt  -->
 
+
+
+
+
 <!--  Custom Settings Option -->
 <div id="configScreen">
 <h3>Custom Setting Options</h3>
@@ -106,6 +111,37 @@
 	</form>
 	<button type=button onclick="loadCustomGame()"> Load Game </button>   
 
+<p>
+Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked onclick="hide_placement()">
+
+<form id=place_pentium name=place_pentium onSubmit="return place()">
+
+	Pentium 1:
+	X<input id="1_x_map" type=text size=4>
+	Y<input id="1_y_map" type=text size=4><br>
+	Pentium 2:
+	X<input id="2_x_map" type=text size=4>
+	Y<input id="2_y_map" type=text size=4><br>
+	Pentium 3:
+	X<input id="3_x_map" type=text size=4>
+	Y<input id="3_y_map" type=text size=4><br>
+	Pentium 4:
+	X<input id="4_x_map" type=text size=4>
+	Y<input id="4_y_map" type=text size=4><br>
+	Pentium 5:
+	X<input id="5_x_map" type=text size=4>
+	Y<input id="5_y_map" type=text size=4><br>
+	Pentium 6:
+	X<input id="6_x_map" type=text size=4>
+	Y<input id="6_y_map" type=text size=4><br>
+	Pentium 7:
+	X<input id="7_x_map" type=text size=4>
+	Y<input id="7_y_map" type=text size=4><br>
+	<br>
+	
+	<input type="submit" value="Submit">			
+
+</form>
 	
 </div>
 <!-- End of custom settings option  -->

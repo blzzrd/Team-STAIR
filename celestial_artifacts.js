@@ -102,6 +102,14 @@ function place()
 	place_pentium(documents.getElementById("7_x_map").value, documents.getElementById("7_y_map").value, false, false);
 }
 
+function hide_placement()
+{
+	if(!document.getElementById('administrator').checked)
+		document.getElementById('place_pentium').style.display='none';
+	else	
+		document.getElementById('place_pentium').style.display='block';
+}
+
 /*	
 	function scanner(x, y, range)
 	{
