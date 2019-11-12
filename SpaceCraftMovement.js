@@ -1,11 +1,14 @@
 function moveSpacecraft(angle, distance) { 
-   // Angles: [0 = EAST, 90 = NORTH, 180 = WEST, 270 = SOUTH]
+
+   // Gather all the variables required.
    distance = eval(distance.value)
-   xCurrent = document.getElementsByName("xValue")[0].value;
-   yCurrent = document.getElementsByName("yValue")[0].value;
+   xCurrent = eval(document.getElementById("xVal").value);
+   yCurrent = eval(document.getElementById("yVal").value);
    wormhole = false;
    max = eval(document.getElementById("mapSize").value);
 
+   // Angles: [0 = EAST, 90 = NORTH, 180 = WEST, 270 = SOUTH]
+   // Perform the computations based on the angles.
    if (angle == 0) {
       if (xCurrent + distance > max) {
 	wormhole = true;
@@ -43,17 +46,19 @@ function moveSpacecraft(angle, distance) {
       }
    }
 
+   // Prompt the message based on whether the wormhole exists or not.
    if(wormhole == true){
 	newX = randCord(max);
 	newY = randCord(max);
 	alert("Spaceship traveled out of the galaxy. Warping in a wormhole.")
    }
-
-   // needs work here
-   document.forms[0].xValue = newX;
-   document.forms[0].yValue = newY;
+   else {
+        alert("Moving Space Craft.");
+   }
    
-   alert("Move Space Craft");
+   document.getElementById('xVal').value = newX;
+   document.getElementById('yVal').value = newY;
+   
    checkEnergy();
    checkSupplies();
 }
@@ -61,3 +66,4 @@ function moveSpacecraft(angle, distance) {
 function randCord(max) { 
 	return Math.round(Math.random() * max);
 }
+
