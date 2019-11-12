@@ -110,6 +110,15 @@ function hide_placement()
 		document.getElementById('place_pentium').style.display='block';
 }
 
+function collision()
+{
+	if(!map[docoument.getElementById("xVal")][[document.getElementById("yVal")])
+		return;
+
+	alert("You collided with an artifact"!);
+	return;
+}
+
 /*	
 	function scanner(x, y, range)
 	{
