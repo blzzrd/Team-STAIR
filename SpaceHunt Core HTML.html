@@ -1,3 +1,17 @@
+<script>
+var map = new Array[128];
+for(var i = 0; i < 128; ++i)
+{
+	map[i] = new Array[128];
+}
+for(var i = 0; i < 128; ++i)
+{
+	for(var j = 0; j < 128; ++j)
+	{
+		map[i][j] = null;
+	}
+}
+</script>
 <html>
 
 <head>
@@ -34,8 +48,11 @@
 -->
 
 
+<script src="celestial_artifacts.js"></script>
 
 <script src="SpaceCraftMovement.js"></script>
+
+
 
 <!--  Ramo's Code -->
 <script src="game_config.js"></script>
@@ -47,7 +64,7 @@
 		display: none;
 	}
 </style>
-<!--  Ramo's Code -->
+
 
 </head>
 
@@ -67,6 +84,10 @@
 </div>
 <!-- End Prompt  -->
 
+
+
+
+
 <!--  Custom Settings Option -->
 <div id="configScreen">
 <h3>Custom Setting Options</h3>
@@ -85,8 +106,42 @@
 				<option value="0">Regular Play</option>
 				<option value="1">Never Dies</option>
 	</select><br>
-	Map Size:<input id="mapSize" type=text size=4 value="25">
-	<input type=submit onsubmit="loadGame()">
+	Map Size:<input id="mapSize" type=text size=4 value="25"><br>
+	</form>
+	<button type=button onclick="loadCustomGame()"> Load Game </button>   
+
+<p>
+Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked onclick="hide_placement()">
+
+<form id=place_pentium name=place_pentium onSubmit="return place()">
+
+	Pentium 1:
+	X<input id="1_x_map" type=text size=4>
+	Y<input id="1_y_map" type=text size=4><br>
+	Pentium 2:
+	X<input id="2_x_map" type=text size=4>
+	Y<input id="2_y_map" type=text size=4><br>
+	Pentium 3:
+	X<input id="3_x_map" type=text size=4>
+	Y<input id="3_y_map" type=text size=4><br>
+	Pentium 4:
+	X<input id="4_x_map" type=text size=4>
+	Y<input id="4_y_map" type=text size=4><br>
+	Pentium 5:
+	X<input id="5_x_map" type=text size=4>
+	Y<input id="5_y_map" type=text size=4><br>
+	Pentium 6:
+	X<input id="6_x_map" type=text size=4>
+	Y<input id="6_y_map" type=text size=4><br>
+	Pentium 7:
+	X<input id="7_x_map" type=text size=4>
+	Y<input id="7_y_map" type=text size=4><br>
+	<br>
+	
+	<input type="submit" value="Submit">			
+
+</form>
+	
 </div>
 <!-- End of custom settings option  -->
 
@@ -100,11 +155,11 @@
 <form name=UI>
 STATUS
 <p>Current Location: 
-X <input type=text name=xValue size=4>
-Y <input type=text name=yValue size=4>
+X <input type=text  id="xVal" size=4 >
+Y <input type=text  id="yVal" size=4 >
 <p>
-<p>Energy <input type=text name=energy size=4>
-<p>Supplies <input type=text name=supplies size=4>%
+<p>Energy <input type=text id="energyVal" size=4 >
+<p>Supplies <input type=text id="suppliesVal" size=4 >%
 <p>
 <hr>
 MAKE A MOVE
