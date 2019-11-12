@@ -59,10 +59,29 @@ function moveSpacecraft(angle, distance) {
    // update the values as necessary.
    document.getElementById('xVal').value = newX;
    document.getElementById('yVal').value = newY;
-   
+
+
+   decreaseEnergy(distance);
    checkEnergy();
+
+   decreaseSupplies(distance);
    checkSupplies();
+
 }
+
+function decreaseEnergy(distance) {
+   energy = eval(document.getElementById('energyVal').value);
+
+   document.getElementById('energyVal').value = energy - (10 * distance);
+}
+
+function decreaseSupplies() { 
+   supplies = eval(document.getElementById('suppliesVal').value);
+
+   document.getElementById('suppliesVal').value = supplies - 2;
+} 
+
+
 
 function randCord(max) { 
 	return Math.round(Math.random() * max);
