@@ -55,7 +55,8 @@ function moveSpacecraft(angle, distance) {
    else {
         alert("Moving Space Craft.");
    }
-   
+
+   // update the values as necessary.
    document.getElementById('xVal').value = newX;
    document.getElementById('yVal').value = newY;
    
