@@ -1,6 +1,6 @@
 // C O N S T A N T S
-var EMPTY = "-"
-var VISITED = "+"
+var UNK = "-"
+var EMPTY = "+"
 var CELESTIAL_OBJECT = "C"
 
 class Celestial_Point {
@@ -56,7 +56,7 @@ class Celestial_Map {
         // If objects are visited - keep that in map
 
         // If objects are not visited and not visible
-            // Print EMPTY in place.
+            // Print UNK in place.
     }
 
     insert_object(x, y, type) {
