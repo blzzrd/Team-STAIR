@@ -64,6 +64,16 @@ for(var i = 0; i < 128; ++i)
 		display: none;
 	}
 </style>
+<script>
+	
+gameSettings = {
+  xLocation:"12", yLocation:"12",
+  supplies:"100", energy:"100",
+  credits:"100", wormholeBehavior:"static",
+  regularPlay:"true", mapSize:"25"
+}
+
+</script>
 
 
 </head>
@@ -72,7 +82,7 @@ for(var i = 0; i < 128; ++i)
 <body >
 <!--  Prompt for custom settings -->
 <div id="config">
-<form oninput="gameConfigOption()">
+<form oninput="gameConfigOption(gameSettings)">
 <h2> Welcome to Space Hunt</h2>
 <p>Would you like to personalize your gaming experience?
 	<select id="gameConfigTF">
