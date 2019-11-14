@@ -42,28 +42,34 @@ document.getElementById("validate").innerHTML ="";
 	
 	//validate mapSize
 	if( (mapSize >128) || (mapSize < 10) || (isNaN(mapSize)) ) {
-		document.getElementById("validate").innerHTML = "Enter invalid value for map size. Enter a value between 10 and 128.";
+		document.getElementById("validate").innerHTML = "Entered invalid value for map size. Enter a value between 10 and 128.";
+		return;
 	}
 	// validate starting x location
 	else if( (xLoc < 0) || (isNaN(xLoc)) || (xLoc > mapSize) ){
-		document.getElementById("validate").innerHTML = "Enter invalid value for x location!";
+		document.getElementById("validate").innerHTML = "Entered invalid value for x location!";
+		return;
 	}
 	//validate starting y location
 	else if( (yLoc < 0) || (isNaN(yLoc)) || (yLoc > mapSize) ){
-		document.getElementById("validate").innerHTML = "Enter invalid value for y location!";
+		document.getElementById("validate").innerHTML = "Entered invalid value for y location!";
+		return;
 	}
 	//validate energy
 	
 	else if ( (isNaN(energy)) || (energy <= 0) /*|| (energy >100)*/ ){
-		document.getElementById("validate").innerHTML = "Enter invalid value for energy. Select a value between 1 and 100";
+		document.getElementById("validate").innerHTML = "Entered invalid value for energy. Select a value between 1 and 100";
+		return;
 	}
 	//validat credit
 	else if ( (isNaN(credits)) || (credits < 0)) {
-		document.getElementById("validate").innerHTML = "Enter invalid value for credits";
+		document.getElementById("validate").innerHTML = "Entered invalid value for credits";
+		return;
 		
 	}
 	else if ( (isNaN(supplies)) || (supplies < 0)) {
-		document.getElementById("validate").innerHTML = "Enter invalid value for supplies";
+		document.getElementById("validate").innerHTML = "Entered invalid value for supplies";
+		return;
 		
 	}
 	
