@@ -1,7 +1,6 @@
 
 
-function gameConfigOption() {
-	
+function gameConfigOption(settingsObj) {
 	gameScreen = document.getElementById("game");
 	conScreen = document.getElementById("configScreen");
 	configVal = document.getElementById("gameConfigTF").value;
@@ -12,7 +11,7 @@ function gameConfigOption() {
 		gameScreen.style.display = "block";
 		conScreen.style.display = "none";
 		hideOption.style.display = "none";
-		loadDefaultGame();
+		loadGame(settingsObj);
 		
 	} 
 	else if(configVal == "true"){
@@ -26,49 +25,73 @@ function gameConfigOption() {
 	}
 return;
 }
-function getCustomSettings() {
 
+function getCustomSettings(settingsObj) {
+document.getElementById("validate").innerHTML ="";
+
+	//obtain and inputs
+	mapSize = document.getElementById("mapSize").value;
+	document.getElementById("size").innerHTML = mapSize;
 	xLoc = document.getElementById("xLoc").value;
 	yLoc = document.getElementById("yLoc").value;
-	energy= document.getElementById("energy").value;
+	energy = document.getElementById("energy").value;
 	supplies = document.getElementById("supplies").value;
-	//credits = document.getElementById("credits").value;
+	credits = document.getElementById("credits").value;
 	wormholeBehavior = document.getElementById("randomizeWormhole").value;
 	playerDies = document.getElementById("playerDies").value;
-	mapSize = document.getElementById("mapSize").value;
 	
-		document.getElementById("xVal").value = xLoc;
-		document.getElementById("yVal").value = yLoc;
-		document.getElementById("energyVal").value = energy;
-		document.getElementById("suppliesVal").value = supplies;
-		
-	/*//check for isNaN(credits later
-	if( (isNaN(xLoc)) || (isNaN(yLoc)) || (isNaN(energy)) || (isNaN(supplies)) || (mapSize(xLoc)) ) {
-		document.getElementById("validate").innerHTML = "Enter numerical values only!";
+	//validate mapSize
+	if( (mapSize >128) || (mapSize < 10) || (isNaN(mapSize)) ) {
+		document.getElementById("validate").innerHTML = "Enter invalid value for map size. Enter a value between 10 and 128.";
+	}
+	// validate starting x location
+	else if( (xLoc < 0) || (isNaN(xLoc)) || (xLoc > mapSize) ){
+		document.getElementById("validate").innerHTML = "Enter invalid value for x location!";
+	}
+	//validate starting y location
+	else if( (yLoc < 0) || (isNaN(yLoc)) || (yLoc > mapSize) ){
+		document.getElementById("validate").innerHTML = "Enter invalid value for y location!";
+	}
+	//validate energy
+	
+	else if ( (isNaN(energy)) || (energy <= 0) /*|| (energy >100)*/ ){
+		document.getElementById("validate").innerHTML = "Enter invalid value for energy. Select a value between 1 and 100";
+	}
+	//validat credit
+	else if ( (isNaN(credits)) || (credits < 0)) {
+		document.getElementById("validate").innerHTML = "Enter invalid value for credits";
 		
 	}
-		*/
-
+	else if ( (isNaN(supplies)) || (supplies < 0)) {
+		document.getElementById("validate").innerHTML = "Enter invalid value for supplies";
+		
+	}
+	
+	else{
+		settingsObj.mapSize = mapSize;
+		settingsObj.xLocation= xLoc;
+		settingsObj.yLocation= yLoc;
+		settingsObj.energy= energy;
+		settingsObj.supplies = supplies;
+		settingsObj.credits = credits;
+		settingsObj.wormholeBehavior = randomizeWormhole;
+		settingsObj.regularPlay = playerDies;
+	}
 
 }
 
 
-function loadDefaultGame() {
+function loadGame(settingsObj) {
 	document.getElementById("game").style.display = "block";
 	 document.getElementById("configScreen").style.display = "none";
 	document.getElementById("config").style.display = "none";
-	document.getElementById("xVal").value = "10";
-	document.getElementById("yVal").value = "10";
-	document.getElementById("energyVal").value = "100";
-	document.getElementById("suppliesVal").value = "100";
+
+	document.getElementById("xVal").value = settingsObj.xLocation;
+	document.getElementById("yVal").value = settingsObj.yLocation;
+	document.getElementById("energyVal").value = settingsObj.energy;
+	document.getElementById("suppliesVal").value = settingsObj.supplies;
+	document.getElementById("credits").value = settingsObj.credits;
 	
-	
+		
 }
 
-function loadCustomGame() {
-	document.getElementById("game").style.display = "block";
-	document.getElementById("configScreen").style.display = "none";
-	document.getElementById("config").style.display = "none";
-	return false;
-
-}
