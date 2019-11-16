@@ -21,15 +21,16 @@ function gameConfigOption(settingsObj) {
 	
 	}
 	else {
-		
+		//otherwise do nothing
 	}
 return;
 }
 
 function getCustomSettings(settingsObj) {
+//clear display message
 document.getElementById("validate").innerHTML ="";
 
-	//obtain and inputs
+	//obtain inputs
 	mapSize = document.getElementById("mapSize").value;
 	document.getElementById("size").innerHTML = mapSize;
 	xLoc = document.getElementById("xLoc").value;
@@ -61,13 +62,13 @@ document.getElementById("validate").innerHTML ="";
 		document.getElementById("validate").innerHTML = "Entered invalid value for energy. Select a value between 1 and 100";
 		return;
 	}
-	//validat credit
-	else if ( (isNaN(credits)) || (credits < 0)) {
+	//validaet credit
+	else if ( (isNaN(credits)) || (credits <= 0)) {
 		document.getElementById("validate").innerHTML = "Entered invalid value for credits";
 		return;
 		
 	}
-	else if ( (isNaN(supplies)) || (supplies < 0)) {
+	else if ( (isNaN(supplies)) || (supplies <= 0)) {
 		document.getElementById("validate").innerHTML = "Entered invalid value for supplies";
 		return;
 		
@@ -97,7 +98,6 @@ function loadGame(settingsObj) {
 	document.getElementById("energyVal").value = settingsObj.energy;
 	document.getElementById("suppliesVal").value = settingsObj.supplies;
 	document.getElementById("credits").value = settingsObj.credits;
-	
 		
 }
 
