@@ -120,12 +120,12 @@ var stack = [];
 				<option value="false">Never Dies</option>
 	</select><br>
 	</form>
-	<button type=button onclick="loadGame(gameSettings)"> Load Game </button>   
+	  
 
 <p>
-Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked onclick="hide_placement()">
+<!--Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked onclick="hide_placement()"> -->
 
-<form id=place_pentium name=place_pentium onSubmit="return place()">
+<form id=place_pentium name=place_pentium >
 
 	Pentium 1:
 	X<input id="1_x_map" type=text size=4>
@@ -149,11 +149,10 @@ Are you the game administrator?<input type="checkbox" id="administrator" name="a
 	X<input id="7_x_map" type=text size=4>
 	Y<input id="7_y_map" type=text size=4><br>
 	<br>
-	
-	<input type="submit" value="Submit">			
+			
 
 </form>
-	
+	<button type=button onclick="loadGame(gameSettings); return place()"> Load Game </button> 
 </div>
 <!-- End of custom settings option  -->
 
