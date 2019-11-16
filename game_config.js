@@ -6,24 +6,20 @@ function gameConfigOption(settingsObj) {
 	configVal = document.getElementById("gameConfigTF").value;
 	hideOption = document.getElementById("config");
 	
-	
-	if (configVal == "false") {
-		gameScreen.style.display = "block";
-		conScreen.style.display = "none";
-		hideOption.style.display = "none";
-		loadGame(settingsObj);
-		
-	} 
-	else if(configVal == "true"){
+	 if(configVal == "admin"){
 	  conScreen.style.display= "block";
 	  gameScreen.style.display = "none";
 	  hideOption.style.display = "none";
 	
 	}
+	
 	else {
-		//otherwise do nothing
+		gameScreen.style.display = "block";
+		conScreen.style.display = "none";
+		hideOption.style.display = "none";
+		loadGame(settingsObj);
 	}
-return;
+
 }
 
 function getCustomSettings(settingsObj) {
