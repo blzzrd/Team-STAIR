@@ -112,10 +112,11 @@ function hide_placement()
 
 function collision()
 {
+	/*
 	if(!map[docoument.getElementById("xVal")][[document.getElementById("yVal")])
 		return;
-
-	alert("You collided with an artifact"!);
+	*/
+	alert("You collided with an artifact!");
 	return;
 }
 

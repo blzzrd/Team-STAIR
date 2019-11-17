@@ -1,21 +1,6 @@
-<script>
-var map = new Array[128];
-for(var i = 0; i < 128; ++i)
-{
-	map[i] = new Array[128];
-}
-for(var i = 0; i < 128; ++i)
-{
-	for(var j = 0; j < 128; ++j)
-	{
-		map[i][j] = null;
-	}
-}
-</script>
 <html>
-
 <head>
-<!--
+	<!--
 //
 // *** 
 // *** JavaScript functions loaded as include files
@@ -24,23 +9,23 @@ for(var i = 0; i < 128; ++i)
 //
 -->
 
-<!--
+	<!--
 // *** User Story: SH-3	Running out of energy	Priority: HIGH
 // *** Story: As a player, I want to be notified when I run out of
 // *** energy so I know I have lost the game
 -->
 
-<script src="RunningOutOfEnergy.js"></script>
+	<script src="RunningOutOfEnergy.js"></script>
 
-<!--
+	<!--
 // *** User Story: SH-4	Running out of supplies	Priority: HIGH
 // *** Story: As a player, I want to be notified when I run out of
 // *** supplies so I know I have lost the game
 -->
 
-<script src="RunningOutOfSupplies.js"></script>
+	<script src="RunningOutOfSupplies.js"></script>
 
-<!--
+	<!--
 // *** User Story: SH-1	Spacecraft Movement	Priority: HIGH
 // *** Story: As a player, I want to be able to move my spacecraft 
 // *** 0, 90, 180 or 270 degrees, and a specific distance from my 
@@ -48,143 +33,183 @@ for(var i = 0; i < 128; ++i)
 -->
 
 
-<script src="celestial_artifacts.js"></script>
+	<script src="celestial_artifacts.js"></script>
 
-<script src="SpaceCraftMovement.js"></script>
+	<script src="SpaceCraftMovement.js"></script>
 
 
 
-<!--  Ramo's Code -->
-<script src="game_config.js"></script>
-<style>
-	#game {
-	display: none;
-	}
-	#configScreen {
-		display: none;
-	}
-	#name {
-		padding-top: 75px
-	}
-</style>
-<script>
-	
-gameSettings = {
-  xLocation:"12", yLocation:"12",
-  supplies:"100", energy:"100",
-  credits:"100", wormholeBehavior:"static",
-  regularPlay:"true", mapSize:"25"
-}
 
-var stack = [];
+	<!--  Ramo's Code -->
+	<script src="game_config.js"></script>
+	<style>
+		#game {
+			display: none;
+		}
 
-</script>
+		#configScreen {
+			display: none;
+		}
+
+		#name {
+			padding-top: 75px
+		}
+	</style>
+	<script>
+
+		gameSettings = {
+			xLocation: "12", yLocation: "12",
+			supplies: "100", energy: "100",
+			credits: "100", wormholeBehavior: "static",
+			regularPlay: "true", mapSize: "25"
+		}
+
+		var stack = [];
+
+	</script>
+
+	<script src="CelestialMap.js"></script>
 
 
 </head>
 
 
-<body >
-<!--  Prompt for custom settings -->
-<div id="config" align="center">
-<form >
-<h1> Welcome to Space Hunt</h1>
-<p id="name"> Enter Name for User: 
-<input  id="gameConfigTF" type=text size=10 >
-<button type=button onclick="gameConfigOption(gameSettings)">Load Game</button> 
+<body>
 
-</form>
-</div>
-<!-- End Prompt  -->
+	<!--  Prompt for custom settings -->
 
 
 
 
-<!--  Custom Settings Option -->
-<div id="configScreen">
-<h3>Custom Setting Options</h3>
-<p id="validate"></p>
-<form id="customSettings" oninput="getCustomSettings(gameSettings)">
-	Map Size:<input id="mapSize" type=text size=4 value="25">x <output id="size" value="25"></output></input><br>
-	X Location:<input id="xLoc" type=text size=4 value="12"><br>
-	Y Location:<input id="yLoc" type=text size=4 value="12"><br>
-	Energy:<input id="energy" type=text size=4 value="100">%<br>
-	Supplies:<input id="supplies" type=text size=4 value="100"><br>
-	Credits:<input id="credits" type=text size=4 value="100"><br>
-	Randomize Wormhole Behavior:<select id="randomizeWormhole" value ="static">
+
+
+	<div id="config" align="center">
+		<form>
+			<h1> Welcome to Space Hunt</h1>
+			<p id="name"> Enter Name for User:
+				<input id="gameConfigTF" type=text size=10>
+				<button type=button onclick="gameConfigOption(gameSettings)">Load Game</button>
+
+		</form>
+	</div>
+
+
+
+
+
+
+	<!-- End Prompt  -->
+
+
+
+
+	<!--  Custom Settings Option -->
+	<div id="configScreen">
+		<h3>Custom Setting Options</h3>
+		<p id="validate"></p>
+		<form id="customSettings" oninput="getCustomSettings(gameSettings)">
+			Map Size:<input id="mapSize" type=text size=4 value="25">x <output id="size"
+				value="25"></output></input><br>
+			X Location:<input id="xLoc" type=text size=4 value="12"><br>
+			Y Location:<input id="yLoc" type=text size=4 value="12"><br>
+			Energy:<input id="energy" type=text size=4 value="100">%<br>
+			Supplies:<input id="supplies" type=text size=4 value="100"><br>
+			Credits:<input id="credits" type=text size=4 value="100"><br>
+			Randomize Wormhole Behavior:<select id="randomizeWormhole" value="static">
 				<option value="static">False</option>
 				<option value="randomize">True</option>
-	</select><br>
-	Play Mode:<select id="playerDies" value ="true">
+			</select><br>
+			Play Mode:<select id="playerDies" value="true">
 				<option value="true">Regular Play</option>
 				<option value="false">Never Dies</option>
-	</select><br>
-	</form>
-	<button type=button onclick="loadGame(gameSettings)"> Load Game </button>   
+			</select><br>
+		</form>
+		<button type=button onclick="loadGame(gameSettings)"> Load Game </button>
 
-<p>
-Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked onclick="hide_placement()">
+		<p>
+			Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked
+				onclick="hide_placement()">
 
-<form id=place_pentium name=place_pentium onSubmit="return place()">
+			<form id=place_pentium name=place_pentium onSubmit="return place()">
 
-	Pentium 1:
-	X<input id="1_x_map" type=text size=4>
-	Y<input id="1_y_map" type=text size=4><br>
-	Pentium 2:
-	X<input id="2_x_map" type=text size=4>
-	Y<input id="2_y_map" type=text size=4><br>
-	Pentium 3:
-	X<input id="3_x_map" type=text size=4>
-	Y<input id="3_y_map" type=text size=4><br>
-	Pentium 4:
-	X<input id="4_x_map" type=text size=4>
-	Y<input id="4_y_map" type=text size=4><br>
-	Pentium 5:
-	X<input id="5_x_map" type=text size=4>
-	Y<input id="5_y_map" type=text size=4><br>
-	Pentium 6:
-	X<input id="6_x_map" type=text size=4>
-	Y<input id="6_y_map" type=text size=4><br>
-	Pentium 7:
-	X<input id="7_x_map" type=text size=4>
-	Y<input id="7_y_map" type=text size=4><br>
-	<br>
-	
-	<input type="submit" value="Submit">			
+				Pentium 1:
+				X<input id="1_x_map" type=text size=4>
+				Y<input id="1_y_map" type=text size=4><br>
+				Pentium 2:
+				X<input id="2_x_map" type=text size=4>
+				Y<input id="2_y_map" type=text size=4><br>
+				Pentium 3:
+				X<input id="3_x_map" type=text size=4>
+				Y<input id="3_y_map" type=text size=4><br>
+				Pentium 4:
+				X<input id="4_x_map" type=text size=4>
+				Y<input id="4_y_map" type=text size=4><br>
+				Pentium 5:
+				X<input id="5_x_map" type=text size=4>
+				Y<input id="5_y_map" type=text size=4><br>
+				Pentium 6:
+				X<input id="6_x_map" type=text size=4>
+				Y<input id="6_y_map" type=text size=4><br>
+				Pentium 7:
+				X<input id="7_x_map" type=text size=4>
+				Y<input id="7_y_map" type=text size=4><br>
+				<br>
 
-</form>
-	
-</div>
-<!-- End of custom settings option  -->
+				<input type="submit" value="Submit">
 
+			</form>
 
-
-<!-- end game config -->
+	</div>
+	<!-- End of custom settings option  -->
 
 
-<div id="game">
-<h1>SpaceHunt</h1>
-<form name=UI>
-STATUS
-<p>Current Location: 
-X <input type=text  id="xVal" size=4 >
-Y <input type=text  id="yVal" size=4 >
-<p>
-<p>Energy <input type=text id="energyVal" size=4 >
-<p>Supplies <input type=text id="suppliesVal" size=4 >%
-<p>Credits <input type=text id="credits" size=4>
-<p>
-<hr>
-MAKE A MOVE
-<p>Distance <input type=text name=distance size=4>
-<p>
-<input type=button value="0" onclick=moveSpacecraft(0,distance)>
-<input type=button value="90" onclick=moveSpacecraft(90,distance)>
-<input type=button value="180" onclick=moveSpacecraft(180,distance)>
-<input type=button value="270" onclick=moveSpacecraft(270,distance)>
 
-</form>
-</div>
+	<!-- end game config -->
+
+
+	<div id="game">
+		<h1>SpaceHunt</h1>
+		<form name=UI>
+
+			<h3> STATUS </h3>
+			<p>
+				Current Location:
+				X <input type=text id="xVal" size=4>
+				Y <input type=text id="yVal" size=4>
+			</p>
+			<p>
+				Energy <input type=text id="energyVal" size=4>
+			</p>
+			<p>
+				Supplies <input type=text id="suppliesVal" size=4>%
+			</p>
+
+			<p>
+				Credits <input type=text id="credits" size=4>
+			</p>
+
+			<hr> 
+			<h3> CURRENT MAP </h3>
+			<p>
+				<textarea id="HtmlMap" onload="c_map.display_map()"> <!--- Needs a loading screen configuration? -->
+
+				</textarea>
+			</p>
+			<hr>
+
+			<h3>MAKE A MOVE</h3>
+			<p>
+				Distance <input type=text name=distance size=4>
+			</p>
+			<p>
+				<input type=button value="0" onclick=moveSpacecraft(0,distance)>
+				<input type=button value="90" onclick=moveSpacecraft(90,distance)>
+				<input type=button value="180" onclick=moveSpacecraft(180,distance)>
+				<input type=button value="270" onclick=moveSpacecraft(270,distance)>
+			</p>
+
+		</form>
+	</div>
 </body>
 
 </html>

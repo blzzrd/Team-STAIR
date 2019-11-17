@@ -67,6 +67,8 @@ function moveSpacecraft(angle, distance) {
    decreaseSupplies(distance);
    checkSupplies();
 
+   c_map.display_map();
+
 }
 
 function decreaseEnergy(distance) {
