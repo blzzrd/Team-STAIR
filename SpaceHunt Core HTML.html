@@ -1,4 +1,5 @@
 <html>
+
 <head>
 	<!--
 //
@@ -124,13 +125,12 @@
 				<option value="false">Never Dies</option>
 			</select><br>
 		</form>
-		<button type=button onclick="loadGame(gameSettings)"> Load Game </button>
+
 
 		<p>
-			Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked
-				onclick="hide_placement()">
+			<!--Are you the game administrator?<input type="checkbox" id="administrator" name="administrator" checked onclick="hide_placement()"> -->
 
-			<form id=place_pentium name=place_pentium onSubmit="return place()">
+			<form id=place_pentium name=place_pentium>
 
 				Pentium 1:
 				X<input id="1_x_map" type=text size=4>
@@ -155,17 +155,15 @@
 				Y<input id="7_y_map" type=text size=4><br>
 				<br>
 
-				<input type="submit" value="Submit">
 
 			</form>
-
+			<button type=button onclick="loadGame(gameSettings); return place()"> Load Game </button>
 	</div>
 	<!-- End of custom settings option  -->
 
 
 
 	<!-- end game config -->
-
 
 	<div id="game">
 		<h1>SpaceHunt</h1>
@@ -188,7 +186,7 @@
 				Credits <input type=text id="credits" size=4>
 			</p>
 
-			<hr> 
+			<hr>
 			<h3> CURRENT MAP </h3>
 			<p>
 				<textarea id="HtmlMap" onload="c_map.display_map()"> <!--- Needs a loading screen configuration? -->
@@ -210,6 +208,8 @@
 
 		</form>
 	</div>
+
+
 </body>
 
 </html>
