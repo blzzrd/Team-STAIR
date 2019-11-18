@@ -2,6 +2,7 @@
 var UNK = '-'
 var EMPTY = '+'
 var CELESTIAL_OBJECT = 'C'
+var PLAYER = 'O'
 // Expand celestial object to planet, spacestation, asteroid, etc.
 
 
@@ -70,7 +71,8 @@ class Celestial_Map {
         // displaying it as a string.. 
         // we have to iterate n^2 times EACH TIME the player 
         // makes a decision, so we definitely need to revise this.
-        alert(this.map);
+        //alert(this.map);
+	this.map[gameSettings["mapSize"]-eval(UI.yVal.value)][eval(UI.xVal.value)].show();
         var print_string = '';
         for (var i = 0; i < this.size; i++) {
             print_string += '\n';
