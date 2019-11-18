@@ -33,37 +33,77 @@ class pentium extends artifacts
 	}
 }
 
-var input = [];
-/*
 function input_check()
 {
-	var pentium_1 = "" + document.getElementById("1_x_map").value + document.getElementById("1_y_map").value;
+	var input = [];
+	
+	var pentium_1 = "" + eval(document.getElementById("1_x_map").value) + eval(document.getElementById("1_y_map").value);
 	input[0] = pentium_1;	
 	var pentium_2 = "" + document.getElementById("2_x_map").value + document.getElementById("2_y_map").value;
-	input[1] = pentium_1;	
+	input[1] = pentium_2;	
 	var pentium_3 = "" + document.getElementById("3_x_map").value + document.getElementById("3_y_map").value;
-	input[2] = pentium_1;	
+	input[2] = pentium_3;	
 	var pentium_4 = "" + document.getElementById("4_x_map").value + document.getElementById("4_y_map").value;
-	input[3] = pentium_1;	
+	input[3] = pentium_4;	
 	var pentium_5 = "" + document.getElementById("5_x_map").value + document.getElementById("5_y_map").value;
-	input[4] = pentium_1;	
+	input[4] = pentium_5;	
 	var pentium_6 = "" + document.getElementById("6_x_map").value + document.getElementById("6_y_map").value;
-	input[5] = pentium_1;	
+	input[5] = pentium_6;	
 	var pentium_7 = "" + document.getElementById("7_x_map").value + document.getElementById("7_y_map").value;
-	input[6] = pentium_1;	
+	input[6] = pentium_7;	
 
-	if(document.getElementById("asteroid_1x").value
-	var asteroid_1 = "" + document.getElementById("asteroid_1x").value + document.getElementById("asteroid_1y").value;
-	var asteroid_2 = "" + document.getElementById("asteroid_2x").value + document.getElementById("asteroid_2y").value;
-	var asteroid_3 = "" + document.getElementById("asteroid_3x").value + document.getElementById("asteroid_3y").value;
-		
+	i = 6;
 
+	if(document.getElementById('asteroids').value == "True")
+	{	
+		var asteroid_1 = "" + document.getElementById("asteroid_1x").value + document.getElementById("asteroid_1y").value;
+		input[++i] = asteroid_1;	
+		var asteroid_2 = "" + document.getElementById("asteroid_2x").value + document.getElementById("asteroid_2y").value;
+		input[++i] = asteroid_2;	
+		var asteroid_3 = "" + document.getElementById("asteroid_3x").value + document.getElementById("asteroid_3y").value;
+		input[++i] = asteroid_3;	
+	}		
+	
+	if(document.getElementById('space_stations').value == "True")
+	{	
+		var space_station_1 = "" + document.getElementById("space_station_1x").value + document.getElementById("space_station_1y").value;
+		input[++i] = space_station_1;	
+		var space_station_2 = "" + document.getElementById("space_station_2x").value + document.getElementById("space_station_2y").value;
+		input[++i] = space_station_2;	
+		var space_station_3 = "" + document.getElementById("space_station_3x").value + document.getElementById("space_station_3y").value;
+		input[++i] = space_station_3;	
+	}		
+
+	for(var j = 0; j < i; ++j)
+	{
+		//alert(input[j]);	
+		//input[j] = eval(input[j]);
+		if(input[j] == 0 || isNaN(input[j]))
+		{
+			alert("Invalid input!");
+			return false;
+		}	
+	
+		for(var k = j + 1; k < i; ++k)
+		{
+			if(input[j] == input[k])
+			{
+				alert("Two artifacts cannot be in same space!");
+				return false;
+			}
+		}	
+	}
+	
+	alert("Artifacts placed");
+	return true;
 }
-*/
-
 
 function artifacts_configure(c_map)
 {
+	var no_error = input_check();
+	if(!no_error)
+		return false;	
+
 	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].type = new pentium("Celeron", false, false);
 	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].type = new pentium("Xeon", false, false);
 	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].type = new pentium("Ryzen", false, false);
@@ -79,6 +119,8 @@ function artifacts_configure(c_map)
 	c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].type = new space_station(0);	
 	c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2y").value].type = new space_station(0);	
 	c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].type = new space_station(0);	
+
+	return true;
 }
 
 function hide_asteroid()
