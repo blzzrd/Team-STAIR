@@ -72,6 +72,8 @@ class Celestial_Map {
         // we have to iterate n^2 times EACH TIME the player 
         // makes a decision, so we definitely need to revise this.
         //alert(this.map);
+	document.getElementById("HtmlMap").rows=6;
+	document.getElementById("HtmlMap").cols=gameSettings["mapSize"]*2;
 	// below if is to allow for map to load on opening the page
 	if (gameSettings[supplies] == eval(UI.energyVal.value)) { 
 		this.map[gameSettings["mapSize"]-gameSettings["yLocation"]][gameSettings["xLocation"]].show();
