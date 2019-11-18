@@ -72,7 +72,12 @@ class Celestial_Map {
         // we have to iterate n^2 times EACH TIME the player 
         // makes a decision, so we definitely need to revise this.
         //alert(this.map);
-	this.map[gameSettings["mapSize"]-eval(UI.yVal.value)][eval(UI.xVal.value)].show();
+	if (gameSettings[supplies] == eval(UI.energyVal.value)) {
+		this.map[gameSettings["mapSize"]-gameSettings["yLocation"]][gameSettings["xLocation"]].show();
+	}
+	else {
+		this.map[gameSettings["mapSize"]-eval(UI.yVal.value)][eval(UI.xVal.value)].show();
+	}
         var print_string = '';
         for (var i = 0; i < this.size; i++) {
             print_string += '\n';
