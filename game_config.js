@@ -33,7 +33,7 @@ document.getElementById("validate").innerHTML ="";
 	yLoc = document.getElementById("yLoc").value;
 	energy = document.getElementById("energy").value;
 	supplies = document.getElementById("supplies").value;
-	credits = document.getElementById("credits").value;
+	credits = document.getElementById("desiredCredits").value;
 	wormholeBehavior = document.getElementById("randomizeWormhole").value;
 	playerDies = document.getElementById("playerDies").value;
 	
@@ -77,8 +77,9 @@ document.getElementById("validate").innerHTML ="";
 		settingsObj.energy= energy;
 		settingsObj.supplies = supplies;
 		settingsObj.credits = credits;
-		settingsObj.wormholeBehavior = randomizeWormhole;
+		settingsObj.wormholeBehavior = wormholeBehavior;
 		settingsObj.regularPlay = playerDies;
+		
 	}
 
 }
@@ -93,6 +94,7 @@ function loadGame(settingsObj) {
 	document.getElementById("yVal").value = settingsObj.yLocation;
 	document.getElementById("energyVal").value = settingsObj.energy;
 	document.getElementById("suppliesVal").value = settingsObj.supplies;
+	
 	document.getElementById("creditsVal").value = settingsObj.credits;	
 }
 
