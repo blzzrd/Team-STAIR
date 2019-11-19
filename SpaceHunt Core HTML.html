@@ -71,6 +71,8 @@
 
 	<script src="CelestialMap.js"></script>
 
+	<script src="sensors.js"></script>
+
 
 </head>
 
@@ -245,6 +247,10 @@ game_map = new Celestial_Map();
 				<input type=button value="90" onclick=moveSpacecraft(90,distance)>
 				<input type=button value="180" onclick=moveSpacecraft(180,distance)>
 				<input type=button value="270" onclick=moveSpacecraft(270,distance)>
+			</p>
+
+			<p>
+				<input type=button value="Deploy Sensors" onclick=deploysensor()>
 			</p>
 
 		</form>
