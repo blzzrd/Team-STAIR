@@ -2,6 +2,12 @@ class artifacts
 {
 	constructor()
 	{}
+	
+	collision()
+	{
+		alert("You collided with an artifact!");
+		return;
+	}
 }
 
 class space_station extends artifacts
@@ -11,6 +17,7 @@ class space_station extends artifacts
 		super();
 		this.supplies_cost;
 	}
+	
 }
 
 class asteroid extends artifacts
@@ -76,8 +83,6 @@ function input_check()
 
 	for(var j = 0; j < i; ++j)
 	{
-		//alert(input[j]);	
-		//input[j] = eval(input[j]);
 		if(input[j] == 0 || isNaN(input[j]))
 		{
 			alert("Invalid input!");
@@ -104,21 +109,44 @@ function artifacts_configure(c_map)
 	if(!no_error)
 		return false;	
 
-	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].type = new pentium("Celeron", false, false);
-	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].type = new pentium("Xeon", false, false);
-	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].type = new pentium("Ryzen", false, false);
-	c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].type = new pentium("Saturn", false, false);
-	c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].type = new pentium("Mars", false, false);
-	c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].type = new pentium("Jupiter", false, false);
-	c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].type = new pentium("Pluto", false, false);
-
-	c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].type = new asteroid(0);	
-	c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].type = new asteroid(0);	
-	c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].type = new asteroid(0);	
+	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].obj = new pentium("Celeron", false, false);
+	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].change_type(CELESTIAL_OBJECT);
+		
+	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].obj = new pentium("Xeon", false, false);
+	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].change_type(CELESTIAL_OBJECT);
 	
-	c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].type = new space_station(0);	
-	c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2y").value].type = new space_station(0);	
-	c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].type = new space_station(0);	
+	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].obj = new pentium("Ryzen", false, false);
+	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].change_type(CELESTIAL_OBJECT);
+	
+	c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].obj = new pentium("Saturn", false, false);
+	c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].change_type(CELESTIAL_OBJECT);
+	
+	c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].obj = new pentium("Mars", false, false);
+	c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].change_type(CELESTIAL_OBJECT);
+
+	c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].obj = new pentium("Jupiter", false, false);
+	c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].change_type(CELESTIAL_OBJECT);
+
+	c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].obj = new pentium("Pluto", false, false);
+	c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].change_type(CELESTIAL_OBJECT);
+
+	c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].obj = new asteroid(0);	
+	c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].change_type(CELESTIAL_OBJECT);
+	
+	c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].obj = new asteroid(0);	
+	c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].change_type(CELESTIAL_OBJECT);
+	
+	c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].obj = new asteroid(0);	
+	c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].change_type(CELESTIAL_OBJECT);
+	
+	c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].obj = new space_station(0);	
+	c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].change_type(CELESTIAL_OBJECT);
+	
+	c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2y").value].obj = new space_station(0);	
+	c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2").value].change_type(CELESTIAL_OBJECT);
+	
+	c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].obj = new space_station(0);	
+	c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].change_type(CELESTIAL_OBJECT);
 
 	return true;
 }
@@ -139,13 +167,4 @@ function hide_space_station()
 		document.getElementById('place_space_stations').style.display='block';
 }
 
-function collision()
-{
-	/*
-	if(!map[docoument.getElementById("xVal")][[document.getElementById("yVal")])
-		return;
-	*/
-	alert("You collided with an artifact!");
-	return;
-}
 
