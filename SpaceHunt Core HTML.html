@@ -36,7 +36,6 @@
 
 	<script src="celestial_artifacts.js"></script>
 
-	<script src="SpaceCraftMovement.js"></script>
 
 
 
@@ -69,6 +68,7 @@
 
 	</script>
 
+	<script src="SpaceCraftMovement.js"></script>
 	<script src="CelestialMap.js"></script>
 
 	<script src="sensors.js"></script>
@@ -127,14 +127,6 @@
 				<option value="false">Never Dies</option>
 			</select><br>
 		</form>
-
-<script>
-
-game_map = new Celestial_Map();
-
-
-</script>
-
 		<p>
 
 			<form id=place_pentium name=place_pentium>
@@ -163,12 +155,12 @@ game_map = new Celestial_Map();
 				<br>
 
 			</form>
-	
+
 			<select id="asteroids" name="asteroids" onchange="hide_asteroid()">
 				<option value=True>Enable Asteroids</option>
 				<option value=False>Disable Asteroids</option>
 			</select>
-	
+
 			<form id="place_asteroids" name="place_asteroids">
 				Asteroid 1:
 				X<input type="text" id="asteroid_1x" size=4>
@@ -180,12 +172,12 @@ game_map = new Celestial_Map();
 				X<input type="text" id="asteroid_3x" size=4>
 				X<input type="text" id="asteroid_3y" size=4><br>
 			</form>
-			
+
 			<select id="space_stations" name="space_stations" onchange="hide_space_station()">
 				<option value=True>Enable Space Stations</option>
 				<option value=False>Disable Space Stations</option>
 			</select>
-	
+
 			<form id="place_space_stations" name="place_space_station">
 				Space Station 1:
 				X<input type="text" id="space_station_1x" size=4>
@@ -197,7 +189,7 @@ game_map = new Celestial_Map();
 				X<input type="text" id="space_station_3x" size=4>
 				Y<input type="text" id="space_station_3y" size=4><br>
 			</form>
-	
+
 			<button type=button onclick="loadGame(gameSettings); artifacts_configure(game_map)"> Load Game </button>
 	</div>
 	<!-- End of custom settings option  -->
@@ -229,12 +221,15 @@ game_map = new Celestial_Map();
 			<hr>
 			<h3> CURRENT MAP </h3>
 			<p>
-				<textarea id="HtmlMap" onload="game_map.display_map()"> <!--- Needs a loading screen configuration? -->
+				<!--- Needs a loading screen configuration? -->
+				<textarea id="HtmlMap" style="font-family:'Courier New', Courier, monospace; height: auto;"
+					onload="game_map.display_map()">
 
 				</textarea>
 				<script>
-					window.onload=game_map.display_map()
+					window.onload = game_map.display_map()
 				</script>
+
 			</p>
 			<hr>
 
@@ -254,7 +249,7 @@ game_map = new Celestial_Map();
 			</p>
 
 		</form>
-		
+
 	</div>
 
 
