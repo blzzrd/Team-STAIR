@@ -47,13 +47,13 @@ class Celestial_Point {
     display() {
         // is a pseudo-display for the celestial map function.
         if (this.curr == true) {
-            return PLAYER;
+		if(this.obj)
+			this.obj.collision();	
+		
+		return PLAYER;
         }
 
         if (this.visible == true || this.visited == true) {
-           	if(this.type != UNK && this.type != EMPTY && this.type != PLAYER)
-			return CELESTIAL_OBJECT; 
-		
 		return this.type;
         }
         else {
