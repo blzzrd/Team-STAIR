@@ -59,7 +59,7 @@
 
 		gameSettings = {
 			xLocation: "12", yLocation: "12",
-			supplies: "100", energy: "100",
+			supplies: "100", energy: "500",
 			credits: "100", wormholeBehavior: "static",
 			regularPlay: "true", mapSize: "25"
 		}
@@ -103,7 +103,7 @@
 				value="25"></output></input><br>
 			X Location:<input id="xLoc" type=text size=4 value="12"><br>
 			Y Location:<input id="yLoc" type=text size=4 value="12"><br>
-			Energy:<input id="energy" type=text size=4 value="500">%<br>
+			Energy:<input id="energy" type=text size=4 value="100">%<br>
 			Supplies:<input id="supplies" type=text size=4 value="100"><br>
 			Credits:<input id="desiredCredits" type=text size=4 value="100"><br>
 			Randomize Wormhole Behavior:<select id="randomizeWormhole" value="static">
@@ -192,25 +192,25 @@
 			<h3> STATUS </h3>
 			<p>
 				Current Location:
-				X <input type=text id="xVal" size=4>
-				Y <input type=text id="yVal" size=4>
+				(<output  type=text id="xVal" size=4></output>,
+				<output  type=text id="yVal" size=4></output>)<br>
 			</p>
 			<p>
-				Energy <input type=text id="energyVal" size=4>
+				Energy: <output  type=text id="energyVal" size=4></output>
 			</p>
 			<p>
-				Supplies <input type=text id="suppliesVal" size=4>%
+				Supplies: <output  type=text id="suppliesVal" size=4></output>%
 			</p>
 
 			<p>
-				Credits <input type=text id="creditsVal" size=4>
+				Credits: <output type=text id="creditsVal" size=4></output>
 			</p>
 
 			<hr>
 			<h3> CURRENT MAP </h3>
 			<p>
 				<!--- Needs a loading screen configuration? -->
-				<textarea readonly id="HtmlMap" style="font-family:'Courier New', Courier, monospace; height: 400px;"
+				<textarea readonly id="HtmlMap"  style="font-family:'Courier New', Courier, monospace; height: 400px;"
 					onload="game_map.display_map()">
 
 				</textarea>
