@@ -33,172 +33,340 @@ function deploysensor()
 		decreaseSupplies();
 
 		if(x + 1 == p1X && y == p1Y)
-			c_map.map[x+1][y].show();
+		{
+			game_map.map[x+1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 1 == p1X && y == p1Y)
-			c_map.map[x-1][y].show();
+		{
+			game_map.map[x-1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 2 == p1X && y == p1Y)
-			c_map.map[x+2][y].show();
+		{
+			game_map.map[x+2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 2 == p1X && y == p1Y)
-			c_map.map[x-2][y].show();
+		{
+			game_map.map[x-2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 1 == p1Y && x == p1X)
-			c_map.map[x][y+1].show();
+		{
+			game_map.map[x][y+1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 1 == p1Y && x == p1X)
-			c_map.map[x][y-1].show();
+		{
+			game_map.map[x][y-1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 2 == p1Y && x == p1X)
-			c_map.map[x][y+2].show();
+		{
+			game_map.map[x][y+2].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 2 == p1Y && x == p1X)
-			c_map.map[x][y-2].show();
+		{
+			game_map.map[x][y-2].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 1 == p2X && y == p2Y)
-			c_map.map[x+1][y].show();
+		{
+			game_map.map[x+1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 1 == p2X && y == p2Y)
-			c_map.map[x-1][y].show();
+		{
+			game_map.map[x-1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 2 == p2X && y == p2Y)
-			c_map.map[x+2][y].show();
+		{
+			game_map.map[x+2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 2 == p2X && y == p2Y)
-			c_map.map[x-2][y].show();
+		{
+			game_map.map[x-2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 1 == p2Y && x == p2X)
-			c_map.map[x][y+1].show();
+		{
+			game_map.map[x][y+1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 1 == p2Y && x == p2X)
-			c_map.map[x][y-1].show();
+		{
+			game_map.map[x][y-1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 2 == p2Y && x == p2X)
-			c_map.map[x][y+2].show();
+		{
+			game_map.map[x][y+2].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 2 == p2Y && x == p2X)
-			c_map.map[x][y-2].show();
+		{
+			game_map.map[x][y-2].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 1 == p3X && y == p3Y)
-			c_map.map[x+1][y].show();
+		{
+			game_map.map[x+1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 1 == p3X && y == p3Y)
-			c_map.map[x-1][y].show();
+		{
+			game_map.map[x-1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 2 == p3X && y == p3Y)
-			c_map.map[x+2][y].show();
+		{
+			game_map.map[x+2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 2 == p3X && y == p3Y)
-			c_map.map[x-2][y].show();
+		{
+			game_map.map[x-2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 1 == p3Y && x == p3X)
-			c_map.map[x][y+1].show();
+		{
+			game_map.map[x][y+1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 1 == p3Y && x == p3X)
-			c_map.map[x][y-1].show();
+		{
+			game_map.map[x][y-1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 2 == p3Y && x == p3X)
-			c_map.map[x][y+2].show();
+		{
+			game_map.map[x][y+2].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 2 == p3Y && x == p3X)
-			c_map.map[x][y-2].show();
+		{
+			game_map.map[x][y-2].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 1 == p4X && y == p4Y)
-			c_map.map[x+1][y].show();
+		{
+			game_map.map[x+1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 1 == p4X && y == p4Y)
-			c_map.map[x-1][y].show();
+		{
+			game_map.map[x-1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 2 == p4X && y == p4Y)
-			c_map.map[x+2][y].show();
+		{
+			game_map.map[x+2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 2 == p4X && y == p4Y)
-			c_map.map[x-2][y].show();
+		{
+			game_map.map[x-2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 1 == p4Y && x == p4X)
-			c_map.map[x][y+1].show();
+		{
+			game_map.map[x][y+1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 1 == p4Y && x == p4X)
-			c_map.map[x][y-1].show();
+		{
+			game_map.map[x][y-1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 2 == p4Y && x == p4X)
-			c_map.map[x][y+2].show();
+		{
+			game_map.map[x][y+2].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 2 == p4Y && x == p4X)
-			c_map.map[x][y-2].show();
+		{
+			game_map.map[x][y-2].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 1 == p5X && y == p5Y)
-			c_map.map[x+1][y].show();
+		{
+			game_map.map[x+1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 1 == p5X && y == p5Y)
-			c_map.map[x-1][y].show();
+		{
+			game_map.map[x-1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 2 == p5X && y == p5Y)
-			c_map.map[x+2][y].show();
+		{
+			game_map.map[x+2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 2 == p5X && y == p5Y)
-			c_map.map[x-2][y].show();
+		{
+			game_map.map[x-2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 1 == p5Y && x == p5X)
-			c_map.map[x][y+1].show();
+		{
+			game_map.map[x][y+1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 1 == p5Y && x == p5X)
-			c_map.map[x][y-1].show();
+		{
+			game_map.map[x][y-1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 2 == p5Y && x == p5X)
-			c_map.map[x][y+2].show();
+		{
+			game_map.map[x][y+2].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 2 == p5Y && x == p5X)
-			c_map.map[x][y-2].show();
+		{
+			game_map.map[x][y-2].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 1 == p6X && y == p6Y)
-			c_map.map[x+1][y].show();
+		{
+			game_map.map[x+1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 1 == p6X && y == p6Y)
-			c_map.map[x-1][y].show();
+		{
+			game_map.map[x-1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 2 == p6X && y == p6Y)
-			c_map.map[x+2][y].show();
+		{
+			game_map.map[x+2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 2 == p6X && y == p6Y)
-			c_map.map[x-2][y].show();
+		{
+			game_map.map[x-2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 1 == p6Y && x == p6X)
-			c_map.map[x][y+1].show();
+		{
+			game_map.map[x][y+1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 1 == p6Y && x == p6X)
-			c_map.map[x][y-1].show();
+		{
+			game_map.map[x][y-1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 2 == p6Y && x == p6X)
-			c_map.map[x][y+2].show();
+		{
+			game_map.map[x][y+2].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 2 == p6Y && x == p6X)
-			c_map.map[x][y-2].show();
+		{
+			game_map.map[x][y-2].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 1 == p7X && y == p7Y)
-			c_map.map[x+1][y].show();
+		{
+			game_map.map[x+1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 1 == p7X && y == p7Y)
-			c_map.map[x-1][y].show();
+		{
+			game_map.map[x-1][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x + 2 == p7X && y == p7Y)
-			c_map.map[x+2][y].show();
+		{
+			game_map.map[x+2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(x - 2 == p7X && y == p7Y)
-			c_map.map[x-2][y].show();
+		{
+			game_map.map[x-2][y].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 1 == p7Y && x == p7X)
-			c_map.map[x][y+1].show();
+		{
+			game_map.map[x][y+1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 1 == p7Y && x == p7X)
-			c_map.map[x][y-1].show();
+		{
+			game_map.map[x][y-1].show();
+			game_map.diplay_map();
+		}
 		
 		if(y + 2 == p7Y && x == p7X)
-			c_map.map[x][y+2].show();
+		{
+			game_map.map[x][y+2].show();
+			game_map.diplay_map();
+		}
 		
 		if(y - 2 == p7Y && x == p7X)
-			c_map.map[x][y-2].show();
+		{
+			game_map.map[x][y-2].show();
+			game_map.diplay_map();
+		}
 		
 	}
 }
