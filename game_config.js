@@ -93,7 +93,6 @@ function loadGame(settingsObj) {
 	document.getElementById("yVal").value = settingsObj.yLocation;
 	document.getElementById("energyVal").value = settingsObj.energy;
 	document.getElementById("suppliesVal").value = settingsObj.supplies;
-	document.getElementById("credits").value = settingsObj.credits;
-		
+	document.getElementById("creditsVal").value = settingsObj.credits;	
 }
 

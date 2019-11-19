@@ -64,7 +64,7 @@
 			regularPlay: "true", mapSize: "25"
 		}
 
-		var stack = [];
+		var messageStack = [];
 
 	</script>
 
@@ -81,11 +81,6 @@
 
 	<!--  Prompt for custom settings -->
 
-
-
-
-
-
 	<div id="config" align="center">
 		<form>
 			<h1> Welcome to Space Hunt</h1>
@@ -97,27 +92,20 @@
 	</div>
 
 
-
-
-
-
 	<!-- End Prompt  -->
-
-
-
 
 	<!--  Custom Settings Option -->
 	<div id="configScreen">
 		<h3>Custom Setting Options</h3>
 		<p id="validate"></p>
 		<form id="customSettings" oninput="getCustomSettings(gameSettings)">
-			Map Size:<input id="mapSize" type=text size=4 value="25">x <output id="size"
+			Map Size:<input id="mapSize" type=text size=4 value="25"> x <output id="size"
 				value="25"></output></input><br>
 			X Location:<input id="xLoc" type=text size=4 value="12"><br>
 			Y Location:<input id="yLoc" type=text size=4 value="12"><br>
 			Energy:<input id="energy" type=text size=4 value="100">%<br>
 			Supplies:<input id="supplies" type=text size=4 value="100"><br>
-			Credits:<input id="credits" type=text size=4 value="100"><br>
+			Credits:<input id="desiredCredits" type=text size=4 value="100"><br>
 			Randomize Wormhole Behavior:<select id="randomizeWormhole" value="static">
 				<option value="static">False</option>
 				<option value="randomize">True</option>
@@ -215,14 +203,14 @@
 			</p>
 
 			<p>
-				Credits <input type=text id="credits" size=4>
+				Credits <input type=text id="creditsVal" size=4>
 			</p>
 
 			<hr>
 			<h3> CURRENT MAP </h3>
 			<p>
 				<!--- Needs a loading screen configuration? -->
-				<textarea id="HtmlMap" style="font-family:'Courier New', Courier, monospace; height: auto;"
+				<textarea  readonly id="HtmlMap" style="font-family:'Courier New', Courier, monospace; height: auto;"
 					onload="game_map.display_map()">
 
 				</textarea>
