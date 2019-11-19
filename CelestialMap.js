@@ -10,6 +10,7 @@ class Celestial_Point {
     // I at least think that this is what it's called?
     constructor() {
         this.type = EMPTY;
+        this.obj = null;
         this.visited = false;
         this.visible = false;
         this.curr = false;
