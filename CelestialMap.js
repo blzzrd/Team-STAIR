@@ -51,7 +51,10 @@ class Celestial_Point {
         }
 
         if (this.visible == true || this.visited == true) {
-            return this.type;
+           	if(this.type != UNK && this.type != EMPTY && this.type != PLAYER)
+			return CELESTIAL_OBJECT; 
+		
+		return this.type;
         }
         else {
             return UNK;
