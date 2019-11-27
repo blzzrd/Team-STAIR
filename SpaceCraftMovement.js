@@ -15,6 +15,7 @@ function moveSpacecraft(angle, distance) {
       checkSupplies();
 
       game_map.display_map();
+      Docking_Station.check_station(); //Sams code for space station docking
 }
 
 function decreaseEnergy(distance) {

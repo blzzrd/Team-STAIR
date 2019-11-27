@@ -32,8 +32,8 @@ class Docking {
         if (eval(UI.creditsVal.value) >= 10) {
             var credits = eval(UI.creditsVal.value) - 10;
             var energy = eval(UI.energyVal.value) + 20;
-            UI.energyVal.value = num.toString(energy);
-            UI.creditsVal.value = num.toString(credits);
+            document.getElementById('energyVal').value = energy
+            document.getElementById('creditsVal').value = credits
         }
         else {
             alert("You have too few credits");
