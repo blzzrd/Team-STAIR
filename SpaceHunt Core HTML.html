@@ -36,7 +36,8 @@
 
 	<script src="celestial_artifacts.js"></script>
 
-
+<!-- User Story SH-11 Docking at Space Stations -->
+	<script src="Space_Station_Docking.js"> </script>
 
 
 
@@ -178,10 +179,9 @@
 				Y<input type="text" id="space_station_3y" size=4><br>
 			</form>
 
-			<button type=button onclick="loadGame(gameSettings); artifacts_configure(game_map)"> Load Game </button>
+			<button type=button onclick="loadGame(gameSettings); artifacts_configure(game_map); Docking_Station.load_locations();"> Load Game </button>
 	</div>
 	<!-- End of custom settings option  -->
-
 
 	<!-- end game config -->
 
@@ -226,7 +226,7 @@
 				Distance <input type=text name=distance size=4>
 			</p>
 			<p>
-				<input type=button value="0" onclick=moveSpacecraft(0,distance)>
+				<input type=button value="0" onclick="moveSpacecraft(0,distance), Docking_Station.alert_location()">
 				<input type=button value="90" onclick=moveSpacecraft(90,distance)>
 				<input type=button value="180" onclick=moveSpacecraft(180,distance)>
 				<input type=button value="270" onclick=moveSpacecraft(270,distance)>
