@@ -33,7 +33,7 @@
 // *** current position so I can visit celestial points in the game space.
 -->
 
-
+	<script src="recipe.js"></script>
 	<script src="celestial_artifacts.js"></script>
 
 <!-- User Story SH-11 Docking at Space Stations -->
@@ -143,9 +143,20 @@
 				Pluto:
 				X<input id="7_x_map" type="text" size=4>
 				Y<input id="7_y_map" type="text" size=4><br>
-				<br>
 
 			</form>
+	
+			Recipe:
+			<select id="recipe" name="recipe">
+				<option value=1>Celeron</option>
+				<option value=2>Xeon</option>
+				<option value=3>Ryzen</option>
+				<option value=4>Saturn</option>
+				<option value=5>Mars</option>
+				<option value=6>Jupiter</option>
+				<option value=7>Pluto</option>
+			</select>
+			<br><br>
 
 			<select id="asteroids" name="asteroids" onchange="hide_asteroid()">
 				<option value=True>Enable Asteroids</option>
@@ -207,6 +218,9 @@
 			<p>
 				Credits: <output type=text id="creditsVal" size=4></output>
 			</p>
+
+				Recipe: <output type=text id="recipe_status" size=4></output>
+			<p>
 
 			<hr>
 			<h3> CURRENT MAP </h3>

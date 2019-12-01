@@ -17,6 +17,7 @@ function gameConfigOption(settingsObj) {
 		gameScreen.style.display = "block";
 		conScreen.style.display = "none";
 		hideOption.style.display = "none";
+		default_artifacts();
 		loadGame(settingsObj);
 	}
 
@@ -99,6 +100,9 @@ function loadGame(settingsObj) {
 	document.getElementById("suppliesVal").value = settingsObj.supplies;
 	document.getElementById("creditsVal").value = settingsObj.credits;	4
 	
+	document.getElementById('recipe_status').value = "NOT FOUND";
+	starting_x = document.getElementById('xVal').value;
+	starting_y = document.getElementById('yVal').value;
 }
 
 

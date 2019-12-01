@@ -5,7 +5,7 @@ class artifacts
 	
 	collision()
 	{
-		alert("You collided with an artifact!");
+		logMessage("You collided with an artifact!");	
 		return;
 	}
 }
@@ -17,7 +17,6 @@ class space_station extends artifacts
 		super();
 		this.supplies_cost;
 	}
-	
 }
 
 class asteroid extends artifacts
@@ -34,16 +33,18 @@ class pentium extends artifacts
 	constructor(name, repair, recipe)
 	{
 		super();
-		this.name = name;
+		this.name = name; 
 		this.repair = repair;
 		this.recipe = recipe;
 	}
 }
 
+//Checks input errors
 function input_check()
 {
 	var input = [];
-	
+
+	//Concatenates coordinates	
 	var pentium_1 = "" + eval(document.getElementById("1_x_map").value) + eval(document.getElementById("1_y_map").value);
 	input[0] = pentium_1;	
 	var pentium_2 = "" + document.getElementById("2_x_map").value + document.getElementById("2_y_map").value;
@@ -61,6 +62,7 @@ function input_check()
 
 	i = 6;
 
+	//If user enables asteroids
 	if(document.getElementById('asteroids').value == "True")
 	{	
 		var asteroid_1 = "" + document.getElementById("asteroid_1x").value + document.getElementById("asteroid_1y").value;
@@ -70,7 +72,8 @@ function input_check()
 		var asteroid_3 = "" + document.getElementById("asteroid_3x").value + document.getElementById("asteroid_3y").value;
 		input[++i] = asteroid_3;	
 	}		
-	
+
+	//If user enables space stations	
 	if(document.getElementById('space_stations').value == "True")
 	{	
 		var space_station_1 = "" + document.getElementById("space_station_1x").value + document.getElementById("space_station_1y").value;
@@ -83,71 +86,103 @@ function input_check()
 
 	for(var j = 0; j < i; ++j)
 	{
+		//If input is not a number or at starting location	
 		if(input[j] == 0 || isNaN(input[j]))
 		{
 			alert("Invalid input!");
+			default_artifacts();
 			return false;
 		}	
 	
+		//Determines if artifacts are at same location	
 		for(var k = j + 1; k < i; ++k)
 		{
 			if(input[j] == input[k])
 			{
 				alert("Two artifacts cannot be in same space!");
+				default_artifacts();
 				return false;
 			}
 		}	
 	}
 	
-	alert("Artifacts placed");
 	return true;
 }
 
+//Places artifacts onto map
 function artifacts_configure(c_map)
 {
 	var no_error = input_check();
 	if(!no_error)
 		return false;	
 
-	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].obj = new pentium("Celeron", false, false);
-	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById("recipe").value == 1)	
+		c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].obj = new pentium("Celeron", false, true);
+	else
+		c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].obj = new pentium("Celeron", false, false);
+	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].change_type(PENTIUM);
 		
-	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].obj = new pentium("Xeon", false, false);
-	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById("recipe").value == 2)	
+		c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].obj = new pentium("Xeon", false, true);
+	else
+		c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].obj = new pentium("Xeon", false, false);
+	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].change_type(PENTIUM);
 	
-	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].obj = new pentium("Ryzen", false, false);
-	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById("recipe").value == 3)	
+		c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].obj = new pentium("Ryzen", false, true);
+	else
+		c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].obj = new pentium("Ryzen", false, false);
+	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].change_type(PENTIUM);
 	
-	c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].obj = new pentium("Saturn", false, false);
-	c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById("recipe").value == 4)	
+		c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].obj = new pentium("Saturn", false, true);
+	else
+		c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].obj = new pentium("Saturn", false, false);
+	c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].change_type(PENTIUM);
 	
-	c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].obj = new pentium("Mars", false, false);
-	c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById("recipe").value == 5)	
+		c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].obj = new pentium("Mars", false, true);
+	else
+		c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].obj = new pentium("Mars", false, false);
+	c_map.map[document.getElementById("5_x_map").value][document.getElementById("5_y_map").value].change_type(PENTIUM);
 
-	c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].obj = new pentium("Jupiter", false, false);
-	c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById("recipe").value == 6)	
+		c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].obj = new pentium("Jupiter", false, true);
+	else
+		c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].obj = new pentium("Jupiter", false, false);
+	c_map.map[document.getElementById("6_x_map").value][document.getElementById("6_y_map").value].change_type(PENTIUM);
 
-	c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].obj = new pentium("Pluto", false, false);
-	c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById("recipe").value == 7)	
+		c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].obj = new pentium("Pluto", false, true);
+	else
+		c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].obj = new pentium("Pluto", false, false);
+	c_map.map[document.getElementById("7_x_map").value][document.getElementById("7_y_map").value].change_type(PENTIUM);
 
-	c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].obj = new asteroid(0);	
-	c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById('asteroids').value == "True")
+	{	
+		c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].obj = new asteroid(0);
+		c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].change_type(ASTEROID);
 	
-	c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].obj = new asteroid(0);	
-	c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].change_type(CELESTIAL_OBJECT);
+		c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].obj = new asteroid(0);
+		c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].change_type(ASTEROID);
 	
-	c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].obj = new asteroid(0);	
-	c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].change_type(CELESTIAL_OBJECT);
+		c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].obj = new asteroid(0);
+		c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].change_type(ASTEROID);
+	}
 	
-	c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].obj = new space_station(0);	
-	c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].change_type(CELESTIAL_OBJECT);
+	if(document.getElementById('space_stations').value == "True")
+	{
+		c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].obj = new space_station(0);
+		c_map.map[document.getElementById("space_station_1x").value][document.getElementById("space_station_1y").value].change_type(SPACE_STATION);
 	
-	c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2y").value].obj = new space_station(0);	
-	c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2").value].change_type(CELESTIAL_OBJECT);
+		c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2y").value].obj = new space_station(0);
+		c_map.map[document.getElementById("space_station_2x").value][document.getElementById("space_station_2y").value].change_type(SPACE_STATION);
 	
-	c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].obj = new space_station(0);	
-	c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].change_type(CELESTIAL_OBJECT);
+		c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].obj = new space_station(0);
+		c_map.map[document.getElementById("space_station_3x").value][document.getElementById("space_station_3y").value].change_type(SPACE_STATION);
+	}
 
+	logMessage("Artifacts successfully placed");	
 	return true;
 }
 
@@ -166,5 +201,4 @@ function hide_space_station()
 	else	
 		document.getElementById('place_space_stations').style.display='block';
 }
-
 

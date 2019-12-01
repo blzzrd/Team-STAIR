@@ -1,7 +1,10 @@
 // C O N S T A N T S
 var UNK = '-'
 var EMPTY = '+'
-var CELESTIAL_OBJECT = 'C'
+var PENTIUM = 'P'
+var SPACE_STATION = 'S'
+var ASTEROID = 'A'
+
 var PLAYER = 'O'
 // Expand celestial object to planet, spacestation, asteroid, etc.
 
@@ -47,9 +50,9 @@ class Celestial_Point {
     display() {
         // is a pseudo-display for the celestial map function.
         if (this.curr == true) {
-		if(this.obj)
-			this.obj.collision();	
-		
+		//if(this.obj)
+			//this.obj.collision();	
+	
 		return PLAYER;
         }
 
