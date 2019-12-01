@@ -98,9 +98,7 @@ function loadGame(settingsObj) {
 	document.getElementById("energyVal").value = settingsObj.energy;
 	document.getElementById("suppliesVal").value = settingsObj.supplies;
 	document.getElementById("creditsVal").value = settingsObj.credits;	4
-	for (i=0;i<100; i++) {
-		logMessage("it works");
-	}
+	
 }
 
 
