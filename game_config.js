@@ -54,23 +54,25 @@ document.getElementById("validate").innerHTML ="";
 	}
 	//validate energy
 	
-	else if ( (isNaN(energy)) || (energy <= 0) /*|| (energy >100)*/ ){
-		document.getElementById("validate").innerHTML = "Entered invalid value for energy. Select a value between 1 and 100";
+	else if ( (isNaN(energy)) || (energy <= 0) ){
+		document.getElementById("validate").innerHTML = "Entered invalid value for energy!";
 		return;
 	}
-	//validaet credit
+	//validate credit
 	else if ( (isNaN(credits)) || (credits <= 0)) {
-		document.getElementById("validate").innerHTML = "Entered invalid value for credits";
+		document.getElementById("validate").innerHTML = "Entered invalid value for credits!";
 		return;
 		
 	}
+	//validate supplies
 	else if ( (isNaN(supplies)) || (supplies <= 0)) {
-		document.getElementById("validate").innerHTML = "Entered invalid value for supplies";
+		document.getElementById("validate").innerHTML = "Entered invalid value for supplies!";
 		return;
 		
 	}
 	
 	else{
+		//obtain values from html containers
 		settingsObj.mapSize = mapSize;
 		settingsObj.xLocation= xLoc;
 		settingsObj.yLocation= yLoc;
@@ -86,15 +88,18 @@ document.getElementById("validate").innerHTML ="";
 
 
 function loadGame(settingsObj) {
+	// display game screen
 	document.getElementById("game").style.display = "block";
-	 document.getElementById("configScreen").style.display = "none";
+	document.getElementById("configScreen").style.display = "none";
 	document.getElementById("config").style.display = "none";
-
+	
+	//write game values to html containers
 	document.getElementById("xVal").value = settingsObj.xLocation;
 	document.getElementById("yVal").value = settingsObj.yLocation;
 	document.getElementById("energyVal").value = settingsObj.energy;
 	document.getElementById("suppliesVal").value = settingsObj.supplies;
-	
 	document.getElementById("creditsVal").value = settingsObj.credits;	
 }
+
+
 
