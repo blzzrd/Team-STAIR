@@ -14,7 +14,9 @@ function recipe_status()
 
 	//If user has recipe and checks if user returned recipe to starting coordinates	
 	if(document.getElementById('xVal').value == starting_x || document.getElementById('yVal'.value) == starting_y)
+	{
 		logMessage("You won!");	
+	}
 }
 
 //Checks if user collides with artifact
@@ -25,14 +27,26 @@ function artifact_check()
 	{
 		//If collided artifact is pentium
 		if(game_map.map[document.getElementById("xVal").value][document.getElementById("yVal").value].type == PENTIUM)
+		{
 			reached_pentium();
-		
+			return true;
+		}	
+	
 		if(game_map.map[document.getElementById("xVal").value][document.getElementById("yVal").value].type == ASTEROID)
+		{
 			reached_asteroid();	
+			return true;	
+		}	
 		
 		if(game_map.map[document.getElementById("xVal").value][document.getElementById("yVal").value].type == SPACE_STATION)
+		{
 			reached_space_station();	
+			return true;
+		}
 	}
+
+	else
+		return false;
 }
 
 //When user collides into pentium artifact 	
