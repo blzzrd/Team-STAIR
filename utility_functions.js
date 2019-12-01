@@ -76,7 +76,7 @@ function default_artifacts()
 	game_map.map[pluto_x][pluto_y].obj = new pentium("Pluto", false, pluto_recipe);
 	game_map.map[pluto_x][pluto_y].change_type(PENTIUM);
 		
-	game_map.map[ax][ay].obj = new asteroid(0);
+	game_map.map[ax][ay].obj = new asteroid(20);
 	game_map.map[ax][ay].change_type(ASTEROID);
 	
 	game_map.map[sx][sy].obj = new space_station(0);

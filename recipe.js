@@ -49,12 +49,13 @@ function reached_pentium()
 			document.getElementById('recipe_status').value = "RECIPE FOUND (Return to starting location)";
 		}
 	}
-
 }
 
 function reached_asteroid()
 {
-	logMessage("You collided with an asteroid!");	
+	logMessage("You collided with an asteroid and took " + game_map.map[document.getElementById("xVal").value][document.getElementById("yVal").value].obj.damage + " damage to supplies!");
+      	document.getElementById('suppliesVal').value -=  game_map.map[document.getElementById("xVal").value][document.getElementById("yVal").value].obj.damage;
+	checkSupplies();
 }
 
 function reached_space_station()

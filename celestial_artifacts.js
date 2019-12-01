@@ -15,7 +15,7 @@ class space_station extends artifacts
 	constructor(supplies_cost)
 	{
 		super();
-		this.supplies_cost;
+		this.supplies_cost = supplies_cost;
 	}
 }
 
@@ -24,7 +24,7 @@ class asteroid extends artifacts
 	constructor(damage)
 	{
 		super();
-		this.damage;
+		this.damage = damage;
 	}	
 }
 
@@ -160,13 +160,13 @@ function artifacts_configure(c_map)
 
 	if(document.getElementById('asteroids').value == "True")
 	{	
-		c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].obj = new asteroid(0);
+		c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].obj = new asteroid(document.getElementById("damage_1"));
 		c_map.map[document.getElementById("asteroid_1x").value][document.getElementById("asteroid_1y").value].change_type(ASTEROID);
 	
-		c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].obj = new asteroid(0);
+		c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].obj = new asteroid(document.getElementById("damage_2"));
 		c_map.map[document.getElementById("asteroid_2x").value][document.getElementById("asteroid_2y").value].change_type(ASTEROID);
 	
-		c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].obj = new asteroid(0);
+		c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].obj = new asteroid(document.getElementById("damage_3"));
 		c_map.map[document.getElementById("asteroid_3x").value][document.getElementById("asteroid_3y").value].change_type(ASTEROID);
 	}
 	
