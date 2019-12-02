@@ -5,7 +5,7 @@ function gameConfigOption(settingsObj) {
 	conScreen = document.getElementById("configScreen");
 	configVal = document.getElementById("gameConfigTF").value;
 	hideOption = document.getElementById("config");
-	
+	emoji();	
 	 if(configVal == "admin"){
 	  conScreen.style.display= "block";
 	  gameScreen.style.display = "none";

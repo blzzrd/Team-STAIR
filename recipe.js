@@ -13,7 +13,7 @@ function recipe_status()
 		return;
 
 	//If user has recipe and checks if user returned recipe to starting coordinates	
-	if(document.getElementById('xVal').value == starting_x || document.getElementById('yVal'.value) == starting_y)
+	if(document.getElementById('xVal').value == starting_x && starting_x && document.getElementById('yVal').value == starting_y)
 	{
 		logMessage("You won!");	
 	}

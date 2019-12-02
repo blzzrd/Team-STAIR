@@ -4,11 +4,12 @@ function moveSpacecraft(angle, distance) {
       distance = eval(distance.value)
 
       // Change MAP  
-	for(var i = 1; i <= distance; ++i) 
+	//If user moves more than one space,
+	//each space is checked for artifact	
+	for(var i = 0; i < distance; ++i) 
 	{
-	 	game_map.traverse_map(angle, i);
-		if(artifact_check());
-			break;	
+	 	game_map.traverse_map(angle, 1);
+		//artifact_check();
 	}
 
       decreaseEnergy(distance);
@@ -17,6 +18,7 @@ function moveSpacecraft(angle, distance) {
       decreaseSupplies(distance);
       checkSupplies();
 
+	artifact_check();
 	recipe_status();
 
       game_map.display_map();

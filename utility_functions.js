@@ -7,6 +7,19 @@ function logMessage (message) {
 		document.getElementById('messageLog').scrollTop = document.getElementById('messageLog').scrollHeight;
 }
 
+function emoji()
+{
+	if(document.getElementById("emoji").checked)	
+	{	
+		UNK = '&#x2B1C'
+		EMPTY = '&#x2B1B'
+		PENTIUM = '&#x1F30E'
+		SPACE_STATION = '&#x1F6F0'
+		ASTEROID = '&#x1F525'
+		PLAYER = '&#x1F680'
+	}	
+}
+
 //Default locations of artifacts
 //   Only one recipe on map
 //   
