@@ -38,7 +38,7 @@ document.getElementById("validate").innerHTML ="";
 	credits = document.getElementById("desiredCredits").value;
 	wormholeBehavior = document.getElementById("randomizeWormhole").value;
 	playerDies = document.getElementById("playerDies").value;
-	alert(mapSize);
+	//alert(xStarting + " " + yStarting + " " + mapSize);
 	//validate mapSize
 	if( (mapSize >128) || (mapSize < 10) || (isNaN(mapSize)) ) {
 		document.getElementById("validate").innerHTML = "Entered invalid value for map size. Enter a value between 10 and 128.";
