@@ -33,16 +33,18 @@
 // *** current position so I can visit celestial points in the game space.
 -->
 
-
+	<script src="recipe.js"></script>
 	<script src="celestial_artifacts.js"></script>
 
 <!-- User Story SH-11 Docking at Space Stations -->
 	<script src="Space_Station_Docking.js"> </script>
 
 
-
-	<!--  Ramo's Code -->
+<script src="utility_functions.js"></script>
+	<!--  User Story SH-2 -->
 	<script src="game_config.js"></script>
+	
+	
 	<style>
 		#game {
 			display: none;
@@ -85,11 +87,13 @@
 	<div id="config" align="center">
 		<form>
 			<h1> Welcome to Space Hunt</h1>
-			<p id="name"> Enter Name for User:
+			<p id="name"> Enter Name:
 				<input id="gameConfigTF" type=text size=10>
 				<button type=button onclick="gameConfigOption(gameSettings)">Load Game</button>
 
 		</form>
+
+		<input type="checkbox" id="emoji"> Enable emojis
 	</div>
 
 
@@ -141,9 +145,20 @@
 				Pluto:
 				X<input id="7_x_map" type="text" size=4>
 				Y<input id="7_y_map" type="text" size=4><br>
-				<br>
 
 			</form>
+	
+			Recipe:
+			<select id="recipe" name="recipe">
+				<option value=1>Celeron</option>
+				<option value=2>Xeon</option>
+				<option value=3>Ryzen</option>
+				<option value=4>Saturn</option>
+				<option value=5>Mars</option>
+				<option value=6>Jupiter</option>
+				<option value=7>Pluto</option>
+			</select>
+			<br><br>
 
 			<select id="asteroids" name="asteroids" onchange="hide_asteroid()">
 				<option value=True>Enable Asteroids</option>
@@ -153,13 +168,16 @@
 			<form id="place_asteroids" name="place_asteroids">
 				Asteroid 1:
 				X<input type="text" id="asteroid_1x" size=4>
-				X<input type="text" id="asteroid_1y" size=4><br>
+				Y<input type="text" id="asteroid_1y" size=4>
+				Damage: <input type="text" id="damage_1" size=4><br>	
 				Asteroid 2:
 				X<input type="text" id="asteroid_2x" size=4>
-				X<input type="text" id="asteroid_2y" size=4><br>
+				Y<input type="text" id="asteroid_2y" size=4>
+				Damage: <input type="text" id="damage_2" size=4><br>	
 				Asteroid 2:
 				X<input type="text" id="asteroid_3x" size=4>
-				X<input type="text" id="asteroid_3y" size=4><br>
+				Y<input type="text" id="asteroid_3y" size=4>
+				Damage: <input type="text" id="damage_3" size=4><br>	
 			</form>
 
 			<select id="space_stations" name="space_stations" onchange="hide_space_station()">
@@ -206,17 +224,16 @@
 				Credits: <output type=text id="creditsVal" size=4></output>
 			</p>
 
+				Recipe: <output type=text id="recipe_status" size=4></output>
+			<p>
+
 			<hr>
 			<h3> CURRENT MAP </h3>
 			<p>
 				<!--- Needs a loading screen configuration? -->
-				<textarea readonly id="HtmlMap"  style="font-family:'Courier New', Courier, monospace; height: 400px;"
-					onload="game_map.display_map()">
-
+				<textarea readonly id="HtmlMap"  style="font-family:'Courier New', Courier, monospace; height: 400px;">
 				</textarea>
-				<script>
-					window.onload = game_map.display_map()
-				</script>
+				<textarea readonly id="messageLog" rows="25" cols="35" ></textarea>
 
 			</p>
 			<hr>
@@ -226,10 +243,10 @@
 				Distance <input type=text name=distance size=4>
 			</p>
 			<p>
-				<input type=button value="0" onclick=moveSpacecraft(0,distance)>
-				<input type=button value="90" onclick=moveSpacecraft(90,distance)>
-				<input type=button value="180" onclick=moveSpacecraft(180,distance)>
-				<input type=button value="270" onclick=moveSpacecraft(270,distance)>
+				<input type=button value="0 (Right)" onclick=moveSpacecraft(0,distance)>
+				<input type=button value="90 (Up)" onclick=moveSpacecraft(90,distance)>
+				<input type=button value="180 (Left)" onclick=moveSpacecraft(180,distance)>
+				<input type=button value="270 (Down)" onclick=moveSpacecraft(270,distance)>
 			</p>
 
 			<p>
