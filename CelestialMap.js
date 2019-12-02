@@ -245,4 +245,4 @@ class Celestial_Map {
     }
 }
 
-var game_map = new Celestial_Map()
+

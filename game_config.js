@@ -1,5 +1,5 @@
 
-
+var game_map;
 function gameConfigOption(settingsObj) {
 	gameScreen = document.getElementById("game");
 	conScreen = document.getElementById("configScreen");
@@ -17,8 +17,9 @@ function gameConfigOption(settingsObj) {
 		gameScreen.style.display = "block";
 		conScreen.style.display = "none";
 		hideOption.style.display = "none";
-		default_artifacts();
+		
 		loadGame(settingsObj);
+		default_artifacts();
 	}
 
 }
@@ -98,11 +99,13 @@ function loadGame(settingsObj) {
 	document.getElementById("yVal").value = settingsObj.yLocation;
 	document.getElementById("energyVal").value = settingsObj.energy;
 	document.getElementById("suppliesVal").value = settingsObj.supplies;
-	document.getElementById("creditsVal").value = settingsObj.credits;	4
+	document.getElementById("creditsVal").value = settingsObj.credits;
 	
 	document.getElementById('recipe_status').value = "NOT FOUND";
 	starting_x = document.getElementById('xVal').value;
 	starting_y = document.getElementById('yVal').value;
+	game_map = new Celestial_Map();
+	game_map.display_map();
 }
 
 
