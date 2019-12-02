@@ -31,26 +31,27 @@ document.getElementById("validate").innerHTML ="";
 	//obtain inputs
 	mapSize = document.getElementById("mapSize").value;
 	document.getElementById("size").innerHTML = mapSize;
-	xLoc = document.getElementById("xLoc").value;
-	yLoc = document.getElementById("yLoc").value;
+	xStarting = document.getElementById("xLoc").value;
+	yStarting = document.getElementById("yLoc").value;
 	energy = document.getElementById("energy").value;
 	supplies = document.getElementById("supplies").value;
 	credits = document.getElementById("desiredCredits").value;
 	wormholeBehavior = document.getElementById("randomizeWormhole").value;
 	playerDies = document.getElementById("playerDies").value;
-	
+	alert(mapSize);
 	//validate mapSize
 	if( (mapSize >128) || (mapSize < 10) || (isNaN(mapSize)) ) {
 		document.getElementById("validate").innerHTML = "Entered invalid value for map size. Enter a value between 10 and 128.";
 		return;
 	}
+	
 	// validate starting x location
-	else if( (xLoc < 0) || (isNaN(xLoc)) || (xLoc > mapSize) ){
+	else if( (xStarting < 0) || (isNaN(xStarting)) || (xStarting > mapSize) ){
 		document.getElementById("validate").innerHTML = "Entered invalid value for x location!";
 		return;
 	}
 	//validate starting y location
-	else if( (yLoc < 0) || (isNaN(yLoc)) || (yLoc > mapSize) ){
+	else if( (yStarting < 0) || (isNaN(yStarting)) || (yStarting > mapSize) ){
 		document.getElementById("validate").innerHTML = "Entered invalid value for y location!";
 		return;
 	}
@@ -76,8 +77,8 @@ document.getElementById("validate").innerHTML ="";
 	else{
 		//obtain values from html containers
 		settingsObj.mapSize = mapSize;
-		settingsObj.xLocation= xLoc;
-		settingsObj.yLocation= yLoc;
+		settingsObj.xLocation= xStarting;
+		settingsObj.yLocation= yStarting;
 		settingsObj.energy= energy;
 		settingsObj.supplies = supplies;
 		settingsObj.credits = credits;
