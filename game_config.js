@@ -31,8 +31,8 @@ document.getElementById("validate").innerHTML ="";
 	//obtain inputs
 	mapSize = document.getElementById("mapSize").value;
 	document.getElementById("size").innerHTML = mapSize;
-	xStarting = document.getElementById("xLoc").value;
-	yStarting = document.getElementById("yLoc").value;
+	xStarting = eval(document.getElementById("xLoc").value);
+	yStarting = eval(document.getElementById("yLoc").value);
 	energy = document.getElementById("energy").value;
 	supplies = document.getElementById("supplies").value;
 	credits = document.getElementById("desiredCredits").value;
