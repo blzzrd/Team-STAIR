@@ -23,7 +23,7 @@ function moveSpacecraft(angle, distance) {
 
       game_map.display_map();
       Docking_Station.check_station(); //Sams code for space station docking
-      Collision.check_asteroid(); //Sams code to check for asteroid collision
+      //Collision.check_asteroid(); //Sams code to check for asteroid collision
 }
 
 function decreaseEnergy(distance) {
