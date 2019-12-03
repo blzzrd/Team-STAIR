@@ -16,6 +16,10 @@ function recipe_status()
 	if(document.getElementById('xVal').value == starting_x && starting_x && document.getElementById('yVal').value == starting_y)
 	{
 		logMessage("You won!");	
+		logMessage("FINAL STATS:");	
+		logMessage("ENERGY: " + document.getElementById("energyVal").value);	
+		logMessage("SUPPLIES: " + document.getElementById("suppliesVal").value + "%");	
+		logMessage("CREDITS: " + document.getElementById("creditsVal").value);	
 	}
 }
 
