@@ -36,7 +36,7 @@ class Docking {
             document.getElementById('creditsVal').value = credits
         }
         else {
-            alert("You have too few credits");
+            logMessage("You have too few credits");
         }
     }
 

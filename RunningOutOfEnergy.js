@@ -6,7 +6,7 @@ function checkEnergy() {
 			location.reload(false);
 		}
 		else {
-			alert ("Player death is disabled");
+			logMessage("Player death is disabled");
 		}
 	}
 }
