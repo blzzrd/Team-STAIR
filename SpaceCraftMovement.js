@@ -9,7 +9,7 @@ function moveSpacecraft(angle, distance) {
 	for(var i = 0; i < distance; ++i) 
 	{
 	 	game_map.traverse_map(angle, 1);
-		//artifact_check();
+		artifact_check();
 	}
 
       decreaseEnergy(distance);
