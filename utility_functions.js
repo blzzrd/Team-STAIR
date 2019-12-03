@@ -25,6 +25,8 @@ function emoji()
 //   
 function default_artifacts()
 {
+	logMessage("Artifacts set to default positions");	
+	
 	//Celeron
 	var celeron_x = 13; 
 	var celeron_y = 13;
