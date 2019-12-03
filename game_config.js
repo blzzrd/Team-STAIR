@@ -46,12 +46,12 @@ document.getElementById("validate").innerHTML ="";
 	}
 	
 	// validate starting x location
-	else if( (xStarting < 0) || (isNaN(xStarting)) || (xStarting > mapSize) ){
+	else if( (xStarting < 1) || (isNaN(xStarting)) || (xStarting > mapSize) ){
 		document.getElementById("validate").innerHTML = "Entered invalid value for x location!";
 		return;
 	}
 	//validate starting y location
-	else if( (yStarting < 0) || (isNaN(yStarting)) || (yStarting > mapSize) ){
+	else if( (yStarting < 1) || (isNaN(yStarting)) || (yStarting > mapSize) ){
 		document.getElementById("validate").innerHTML = "Entered invalid value for y location!";
 		return;
 	}
@@ -77,8 +77,8 @@ document.getElementById("validate").innerHTML ="";
 	else{
 		//obtain values from html containers
 		settingsObj.mapSize = mapSize;
-		settingsObj.xLocation= xStarting;
-		settingsObj.yLocation= yStarting;
+		settingsObj.xLocation= xStarting - 1;
+		settingsObj.yLocation= yStarting - 1;
 		settingsObj.energy= energy;
 		settingsObj.supplies = supplies;
 		settingsObj.credits = credits;

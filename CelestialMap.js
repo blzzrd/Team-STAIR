@@ -226,10 +226,10 @@ class Celestial_Map {
 
 
 
-            alert("Spaceship traveled out of the galaxy. Warping through a wormhole.")
+            logMessage("Spaceship traveled out of the galaxy. Warping through a wormhole.")
         }
         else {
-            alert("Moving Space Craft.");
+            logMessage("Moving Space Craft.");
         }
 
         // update the values as necessary.
