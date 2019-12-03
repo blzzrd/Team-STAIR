@@ -214,9 +214,9 @@ class Celestial_Map {
 
         // Prompt the message based on whether the wormhole exists or not.
         if (wormhole == true) {
-            if (document.getElementById("wormholeBehavior").value == "static") {
-                newX = eval(document.getElementById("xLocation").value)
-                newY = eval(document.getElementById("yLocation").value)
+            if (document.getElementById("randomizeWormhole").value == "static") {
+                newX = eval(document.getElementById("xVal").value)
+                newY = eval(document.getElementById("yVal").value)
             }
             else {
                 newX = randCord(max);
