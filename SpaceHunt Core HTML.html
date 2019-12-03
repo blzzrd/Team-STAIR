@@ -38,6 +38,8 @@
 
 <!-- User Story SH-11 Docking at Space Stations -->
 	<script src="Space_Station_Docking.js"> </script>
+<!-- User Story SH-13 Asteroid Collision -->
+	<script src="AsteroidCollision.js"> </script>
 
 
 <script src="utility_functions.js"></script>
@@ -197,7 +199,7 @@
 				Y<input type="text" id="space_station_3y" size=4><br>
 			</form>
 
-			<button type=button onclick="loadGame(gameSettings); artifacts_configure(game_map);Docking_Station.load_locations();"> Load Game </button>
+			<button type=button onclick="loadGame(gameSettings); artifacts_configure(game_map);Docking_Station.load_locations(); Collision.load_asteroids();"> Load Game </button>
 	</div>
 	<!-- End of custom settings option  -->
 
