@@ -30,6 +30,7 @@ function deploysensor()
 	s2Y = eval(document.getElementById("space_station_2y").value);
 	s3X = eval(document.getElementById("space_station_3x").value);
 	s3Y = eval(document.getElementById("space_station_3y").value);
+	nondefault_stats = inputCheck();
 	
 	if(supplies == 0)
 		checkSupplies();
@@ -44,7 +45,10 @@ function deploysensor()
 	else if(typeof p1X === 'undefined' || typeof p1Y === 'undefined' ||typeof p2X === 'undefined' || typeof p2Y === 'undefined' ||typeof p3X === 'undefined' || typeof p3Y === 'undefined' ||typeof p4X === 'undefined' || typeof p4Y === 'undefined' ||typeof p5X === 'undefined' || typeof p5Y === 'undefined' ||typeof p6X === 'undefined' || typeof p6Y === 'undefined' ||typeof p7X === 'undefined' || typeof p7Y === 'undefined')
 */
 
+/*
 	else if(game_map.map[13][13].type == PENTIUM && game_map.map[2][2].type == PENTIUM && game_map.map[3][3].type == PENTIUM && game_map.map[4][4].type == PENTIUM && game_map.map[5][5].type == PENTIUM && game_map.map[6][6].type == PENTIUM && game_map.map[7][7].type == PENTIUM && game_map.map[11][11].type == ASTEROID && game_map.map[13][11].type == SPACE_STATION)
+*/
+	else if(!nondefault_stats)
 	{
 		p1X = 13;
 		p1Y = 13;
@@ -1136,3 +1140,67 @@ function deploysensor()
 	}
 }
 
+function inputCheck()
+{
+	var input = [];
+
+	//Concatenates coordinates	
+	var pentium_1 = "" + eval(document.getElementById("1_x_map").value) + eval(document.getElementById("1_y_map").value);
+	input[0] = pentium_1;	
+	var pentium_2 = "" + document.getElementById("2_x_map").value + document.getElementById("2_y_map").value;
+	input[1] = pentium_2;	
+	var pentium_3 = "" + document.getElementById("3_x_map").value + document.getElementById("3_y_map").value;
+	input[2] = pentium_3;	
+	var pentium_4 = "" + document.getElementById("4_x_map").value + document.getElementById("4_y_map").value;
+	input[3] = pentium_4;	
+	var pentium_5 = "" + document.getElementById("5_x_map").value + document.getElementById("5_y_map").value;
+	input[4] = pentium_5;	
+	var pentium_6 = "" + document.getElementById("6_x_map").value + document.getElementById("6_y_map").value;
+	input[5] = pentium_6;	
+	var pentium_7 = "" + document.getElementById("7_x_map").value + document.getElementById("7_y_map").value;
+	input[6] = pentium_7;	
+
+	i = 6;
+
+	//If user enables asteroids
+	if(document.getElementById('asteroids').value == "True")
+	{	
+		var asteroid_1 = "" + document.getElementById("asteroid_1x").value + document.getElementById("asteroid_1y").value;
+		input[++i] = asteroid_1;	
+		var asteroid_2 = "" + document.getElementById("asteroid_2x").value + document.getElementById("asteroid_2y").value;
+		input[++i] = asteroid_2;	
+		var asteroid_3 = "" + document.getElementById("asteroid_3x").value + document.getElementById("asteroid_3y").value;
+		input[++i] = asteroid_3;	
+	}		
+
+	//If user enables space stations	
+	if(document.getElementById('space_stations').value == "True")
+	{	
+		var space_station_1 = "" + document.getElementById("space_station_1x").value + document.getElementById("space_station_1y").value;
+		input[++i] = space_station_1;	
+		var space_station_2 = "" + document.getElementById("space_station_2x").value + document.getElementById("space_station_2y").value;
+		input[++i] = space_station_2;	
+		var space_station_3 = "" + document.getElementById("space_station_3x").value + document.getElementById("space_station_3y").value;
+		input[++i] = space_station_3;	
+	}		
+
+	for(var j = 0; j < i; ++j)
+	{
+		//If input is not a number or at starting location	
+		if(input[j] == 0 || isNaN(input[j]))
+		{
+			return false;
+		}	
+	
+		//Determines if artifacts are at same location	
+		for(var k = j + 1; k < i; ++k)
+		{
+			if(input[j] == input[k])
+			{
+				return false;
+			}
+		}	
+	}
+	
+	return true;
+}
