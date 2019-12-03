@@ -60,7 +60,7 @@ function input_check()
 	isNaN(document.getElementById("7_x_map").value) || 
 	isNaN(document.getElementById("7_y_map").value))
 	{
-		alert("Coordinates must be integers!");
+		logMessage("Coordinates must be integers!");
 		default_artifacts();
 		return false;
 	}  
@@ -81,7 +81,7 @@ function input_check()
 	document.getElementById("7_x_map").value < 0 || 
 	document.getElementById("7_y_map").value < 0)
 	{
-		alert("Coordinates must be positive!");
+		logMessage("Coordinates must be positive!");
 		default_artifacts();
 		return false;
 	}  
@@ -102,7 +102,7 @@ function input_check()
 	document.getElementById("7_x_map").value > MAX_SIZE || 
 	document.getElementById("7_y_map").value > MAX_SIZE) 
 	{
-		alert("Coordinates must be on map!");
+		logMessage("Coordinates must be on map!");
 		default_artifacts();
 		return false;
 	}  
@@ -137,7 +137,7 @@ function input_check()
 		isNaN(document.getElementById("asteroid_3x").value) || 
 		isNaN(document.getElementById("asteroid_3y").value))
 		{
-			alert("Coordinates must be integers!");
+			logMessage("Coordinates must be integers!");
 			default_artifacts();
 			return false;
 		}  
@@ -149,7 +149,7 @@ function input_check()
 		document.getElementById("asteroid_3x").value < 0 || 
 		document.getElementById("asteroid_3y").value < 0) 
 		{
-			alert("Coordinates must be positive!");
+			logMessage("Coordinates must be positive!");
 			default_artifacts();
 			return false;
 		}
@@ -161,7 +161,7 @@ function input_check()
 		document.getElementById("asteroid_3x").value > MAX_SIZE || 
 		document.getElementById("asteroid_3y").value > MAX_SIZE) 
 		{
-			alert("Coordinates must be on map!");
+			logMessage("Coordinates must be on map!");
 			default_artifacts();
 			return false;
 		}	
@@ -192,7 +192,7 @@ function input_check()
 		isNaN(document.getElementById("space_station_3x").value) || 
 		isNaN(document.getElementById("space_station_3y").value))
 		{
-			alert("Coordinates must be integers!");
+			logMessage("Coordinates must be integers!");
 			default_artifacts();
 			return false;
 		}  
@@ -204,7 +204,7 @@ function input_check()
 		document.getElementById("space_station_3x").value < 0 || 
 		document.getElementById("space_station_3y").value < 0) 
 		{
-			alert("Coordinates must be positive!");
+			logMessage("Coordinates must be positive!");
 			default_artifacts();
 			return false;
 		}
@@ -216,7 +216,7 @@ function input_check()
 		document.getElementById("space_station_3x").value > MAX_SIZE || 
 		document.getElementById("space_station_3y").value > MAX_SIZE)
 		{
-			alert("Coordinates must be on map!");
+			logMessage("Coordinates must be on map!");
 			default_artifacts();
 			return false;
 		}	
@@ -234,14 +234,14 @@ function input_check()
 		//If input is not a number or at starting location	
 		if(input[j] % 1 != 0)
 		{
-			alert("Coordinates must be integers!");
+			logMessage("Coordinates must be integers!");
 			default_artifacts();
 			return false;
 		}	
 		
 		if(input[j] == starting_xy)
 		{
-			alert("User cannot start on artifact!");
+			logMessage("User cannot start on artifact!");
 			default_artifacts();
 			return false;	
 		}
@@ -251,7 +251,7 @@ function input_check()
 		{
 			if(input[j] == input[k])
 			{
-				alert("Two artifacts cannot be in same space!");
+				logMessage("Two artifacts cannot be in same space!");
 				default_artifacts();
 				return false;
 			}
