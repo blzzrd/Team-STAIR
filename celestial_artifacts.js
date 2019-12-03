@@ -121,18 +121,22 @@ function artifacts_configure(c_map)
 	else
 		c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].obj = new pentium("Celeron", false, false);
 	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].change_type(PENTIUM);
+	c_map.map[document.getElementById("1_x_map").value][document.getElementById("1_y_map").value].show();
 		
 	if(document.getElementById("recipe").value == 2)	
 		c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].obj = new pentium("Xeon", false, true);
 	else
 		c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].obj = new pentium("Xeon", false, false);
 	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].change_type(PENTIUM);
+	c_map.map[document.getElementById("2_x_map").value][document.getElementById("2_y_map").value].show()
 	
 	if(document.getElementById("recipe").value == 3)	
 		c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].obj = new pentium("Ryzen", false, true);
 	else
 		c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].obj = new pentium("Ryzen", false, false);
 	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].change_type(PENTIUM);
+	c_map.map[document.getElementById("3_x_map").value][document.getElementById("3_y_map").value].show();
+
 	
 	if(document.getElementById("recipe").value == 4)	
 		c_map.map[document.getElementById("4_x_map").value][document.getElementById("4_y_map").value].obj = new pentium("Saturn", false, true);
@@ -183,6 +187,8 @@ function artifacts_configure(c_map)
 	}
 
 	logMessage("Artifacts successfully placed");	
+
+	c_map.display_map();
 	return true;
 }
 

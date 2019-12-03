@@ -53,11 +53,11 @@ class Celestial_Point {
 		//if(this.obj)
 			//this.obj.collision();	
 	
-		return PLAYER;
+		    return PLAYER;
         }
 
         if (this.visible == true || this.visited == true) {
-		return this.type;
+		    return this.type;
         }
         else {
             return UNK;
@@ -68,7 +68,7 @@ class Celestial_Point {
 class Celestial_Map {
 
     constructor() {
-        this.size = eval(gameSettings["mapSize"]);
+        this.size = eval(document.getElementById("mapSize").value);
         this.map = this.build_map(this.size);
     }
 
@@ -83,7 +83,7 @@ class Celestial_Map {
             }
         }
 
-        map[gameSettings["xLocation"]][gameSettings["yLocation"]].current();
+        map[eval(document.getElementById("xVal").value)][eval(document.getElementById("yVal").value)].current();
         return map;
     }
 
@@ -93,11 +93,11 @@ class Celestial_Map {
         // makes a decision, so we definitely need to revise this.
         //alert(this.map);
         document.getElementById("HtmlMap").rows = 6;
-        document.getElementById("HtmlMap").cols = gameSettings["mapSize"] * 2;
+        document.getElementById("HtmlMap").cols = eval(document.getElementById("mapSize").value) * 2;
         // below if is to allow for map to load on opening the page
         /*
-        if (gameSettings[supplies] == eval(UI.energyVal.value)) {
-            this.map[gameSettings["mapSize"] - gameSettings["yLocation"]][gameSettings["xLocation"]].show();
+        if (eval(document.getElementById(supplies).value == eval(UI.energyVal.value)) {
+            this.map[eval(document.getElementById("mapSize"] - gameSettings["yLocation"]][gameSettings["xLocation"]).value.show();
         }
         // below else will reveal each node that you land on
         else {
@@ -215,9 +215,9 @@ class Celestial_Map {
 
         // Prompt the message based on whether the wormhole exists or not.
         if (wormhole == true) {
-            if (gameSettings["wormholeBehavior"] == "static") {
-                newX = gameSettings["xLocation"]
-                newY = gameSettings["yLocation"]
+            if (document.getElementById("wormholeBehavior").value == "static") {
+                newX = eval(document.getElementById("xLocation").value)
+                newY = eval(document.getElementById("yLocation").value)
             }
             else {
                 newX = randCord(max);
@@ -237,11 +237,6 @@ class Celestial_Map {
         document.getElementById('yVal').value = newY;
 
         this.map[newX][newY].current()
-        
-
-
-
-
     }
 }
 
