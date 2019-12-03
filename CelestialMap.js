@@ -91,7 +91,6 @@ class Celestial_Map {
         // displaying it as a string.. 
         // we have to iterate n^2 times EACH TIME the player 
         // makes a decision, so we definitely need to revise this.
-        //alert(this.map);
         document.getElementById("HtmlMap").rows = 6;
         document.getElementById("HtmlMap").cols = eval(document.getElementById("mapSize").value) * 2;
         // below if is to allow for map to load on opening the page
