@@ -39,6 +39,468 @@ function deploysensor()
 		decreaseSupplies();
 		checkSupplies();
 	}
+/*
+
+	else if(typeof p1X === 'undefined' || typeof p1Y === 'undefined' ||typeof p2X === 'undefined' || typeof p2Y === 'undefined' ||typeof p3X === 'undefined' || typeof p3Y === 'undefined' ||typeof p4X === 'undefined' || typeof p4Y === 'undefined' ||typeof p5X === 'undefined' || typeof p5Y === 'undefined' ||typeof p6X === 'undefined' || typeof p6Y === 'undefined' ||typeof p7X === 'undefined' || typeof p7Y === 'undefined')
+*/
+
+	else if(game_map.map[13][13].type == PENTIUM && game_map.map[2][2].type == PENTIUM && game_map.map[3][3].type == PENTIUM && game_map.map[4][4].type == PENTIUM && game_map.map[5][5].type == PENTIUM && game_map.map[6][6].type == PENTIUM && game_map.map[7][7].type == PENTIUM && game_map.map[11][11].type == ASTEROID && game_map.map[13][11].type == SPACE_STATION)
+	{
+		p1X = 13;
+		p1Y = 13;
+		p2X = 2;
+		p2Y = 2;
+		p3X = 3;
+		p3Y = 3;
+		p4X = 4;
+		p4Y = 4;
+		p5X = 5;
+		p5Y = 5;
+		p6X = 6;
+		p6Y = 6;
+		p7X = 7;
+		p7Y = 7;
+		a1X = 11;
+		a1Y = 11;
+		s1X = 13;
+		s1Y = 11;
+
+		decreaseSupplies();
+
+		if(x + 1 == p1X && y == p1Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(x - 1 == p1X && y == p1Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(x + 2 == p1X && y == p1Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(x - 2 == p1X && y == p1Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(y + 1 == p1Y && x == p1X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(y - 1 == p1Y && x == p1X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(y + 2 == p1Y && x == p1X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(y - 2 == p1Y && x == p1X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected Celeron");
+		}
+		
+		if(x + 1 == p2X && y == p2Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(x - 1 == p2X && y == p2Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(x + 2 == p2X && y == p2Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(x - 2 == p2X && y == p2Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(y + 1 == p2Y && x == p2X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(y - 1 == p2Y && x == p2X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(y + 2 == p2Y && x == p2X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(y - 2 == p2Y && x == p2X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected Xeon");
+		}
+		
+		if(x + 1 == p3X && y == p3Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(x - 1 == p3X && y == p3Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(x + 2 == p3X && y == p3Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(x - 2 == p3X && y == p3Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(y + 1 == p3Y && x == p3X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(y - 1 == p3Y && x == p3X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(y + 2 == p3Y && x == p3X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(y - 2 == p3Y && x == p3X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected Ryzen");
+		}
+		
+		if(x + 1 == p4X && y == p4Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(x - 1 == p4X && y == p4Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(x + 2 == p4X && y == p4Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(x - 2 == p4X && y == p4Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(y + 1 == p4Y && x == p4X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(y - 1 == p4Y && x == p4X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(y + 2 == p4Y && x == p4X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(y - 2 == p4Y && x == p4X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected Saturn");
+		}
+		
+		if(x + 1 == p5X && y == p5Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(x - 1 == p5X && y == p5Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(x + 2 == p5X && y == p5Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(x - 2 == p5X && y == p5Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(y + 1 == p5Y && x == p5X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(y - 1 == p5Y && x == p5X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(y + 2 == p5Y && x == p5X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(y - 2 == p5Y && x == p5X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected Mars");
+		}
+		
+		if(x + 1 == p6X && y == p6Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(x - 1 == p6X && y == p6Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(x + 2 == p6X && y == p6Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(x - 2 == p6X && y == p6Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(y + 1 == p6Y && x == p6X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(y - 1 == p6Y && x == p6X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(y + 2 == p6Y && x == p6X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(y - 2 == p6Y && x == p6X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected Jupiter");
+		}
+		
+		if(x + 1 == p7X && y == p7Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected Pluto");
+		}
+		
+		if(x - 1 == p7X && y == p7Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected Pluto");
+		}
+		
+		if(x + 2 == p7X && y == p7Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected Pluto");
+		}
+		
+		if(x - 2 == p7X && y == p7Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected Pluto");
+		}
+		
+		if(y + 1 == p7Y && x == p7X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected Pluto");
+		}
+		
+		if(y - 1 == p7Y && x == p7X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected Pluto");
+		}
+		
+		if(y + 2 == p7Y && x == p7X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected Pluto");
+		}
+		
+		if(y - 2 == p7Y && x == p7X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected Pluto");
+		}
+
+		if(x + 1 == a1X && y == a1Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected an asteroid");
+		}
+		
+		if(x - 1 == a1X && y == a1Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected an asteroid");
+		}
+		
+		if(x + 2 == a1X && y == a1Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected an asteroid");
+		}
+		
+		if(x - 2 == a1X && y == a1Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected an asteroid");
+		}
+		
+		if(y + 1 == a1Y && x == a1X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected an asteroid");
+		}
+		
+		if(y - 1 == a1Y && x == a1X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected an asteroid");
+		}
+		
+		if(y + 2 == a1Y && x == a1X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected an asteroid");
+		}
+		
+		if(y - 2 == a1Y && x == a1X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected an asteroid");
+		}
+
+		if(x + 1 == s1X && y == s1Y)
+		{
+			game_map.map[x+1][y].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		if(x - 1 == s1X && y == s1Y)
+		{
+			game_map.map[x-1][y].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		if(x + 2 == s1X && y == s1Y)
+		{
+			game_map.map[x+2][y].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		if(x - 2 == s1X && y == s1Y)
+		{
+			game_map.map[x-2][y].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		if(y + 1 == s1Y && x == s1X)
+		{
+			game_map.map[x][y+1].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		if(y - 1 == s1Y && x == s1X)
+		{
+			game_map.map[x][y-1].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		if(y + 2 == s1Y && x == s1X)
+		{
+			game_map.map[x][y+2].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		if(y - 2 == s1Y && x == s1X)
+		{
+			game_map.map[x][y-2].show();
+			logMessage("Sensor detected a space station");
+		}
+		
+		game_map.display_map();
+	}
 	
 	else
 	{
