@@ -18,7 +18,7 @@ function moveSpacecraft(angle, distance) {
       decreaseSupplies(distance);
       checkSupplies();
 
-	artifact_check();
+	//artifact_check();
 	recipe_status();
 
       game_map.display_map();
